@@ -120,7 +120,7 @@ min-height: 100px;
 min-width: 500px;
 background: #3b4351;
 border-radius: 8px;
-padding: 10px;
+padding: 20px;
 font-size: 17px;
 }
 </style>
@@ -184,6 +184,18 @@ var results = document.getElementById("results");
 var non = document.getElementById("non-search");
 var real = document.getElementById("real-results");
 
+//result links
+var first = document.getElementById("first");
+var wikipedia = document.getElementById("wikipedia");
+var youtube = document.getElementById("youtube");
+var amazon = document.getElementById("amazon");
+var pinterest = document.getElementById("pinterest");
+var ebay = document.getElementById("ebay");
+var reddit = document.getElementById("reddit");
+var instagram = document.getElementById("instgram");
+var google = document.getElementById("google");
+var twitter = document.getElementById("twitter");
+
 input.value = query
 
 function home() {
@@ -194,6 +206,13 @@ non.remove();
 } else {
 real.remove();
 }
+//load search results
+first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
+//set first result to a website if .com website is searched
+if (query.split(".")[1] == "com") {
+first.innerHTML = query + " - website<br><a href='https://" + query + "'>" + query + "</a>";
+}
+wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
 </script>
 </body>
 </html>
