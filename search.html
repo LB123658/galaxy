@@ -90,7 +90,7 @@ text-decoration: none;
 font-size: 15px;
 }
 #top {
-position: absolute;
+position: fixed;
 top: 0px;
 left: 0px;
 width: 100%;
@@ -123,6 +123,9 @@ border-radius: 8px;
 padding: 20px;
 font-size: 17px;
 }
+span a:hover {
+text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -137,13 +140,6 @@ font-size: 17px;
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
 </div>
 </div>
-<p id="link-row">
-  <a href="about">About Galaxy</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="privacy">Privacy Policy</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="#">Settings</a>
-</p>
 
 <!-- all results -->
 <div id="results">
@@ -174,7 +170,14 @@ font-size: 17px;
 <span id="twitter"></span>
 <br><br>
 </div>
-
+<br><br><br>
+<p id="link-row">
+  <a href="about">About Galaxy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="privacy">Privacy Policy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#">Settings</a>
+</p>
 </div>
 
 <script>
@@ -192,7 +195,7 @@ var amazon = document.getElementById("amazon");
 var pinterest = document.getElementById("pinterest");
 var ebay = document.getElementById("ebay");
 var reddit = document.getElementById("reddit");
-var instagram = document.getElementById("instgram");
+var instagram = document.getElementById("instagram");
 var google = document.getElementById("google");
 var twitter = document.getElementById("twitter");
 
@@ -206,13 +209,38 @@ non.remove();
 } else {
 real.remove();
 }
-//load search results
+//LOAD SEARCH RESULTS -----------------------------------------------
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 //set first result to a website if .com website is searched
 if (query.split(".")[1] == "com") {
 first.innerHTML = query + " - website<br><a href='https://" + query + "'>" + query + "</a>";
 }
+//wikipedia link
 wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
+
+//youtube link
+youtube.innerHTML = query + " - YouTube<br><a href='https://www.youtube.com/results?search_query=" + query + "' target='blank'>www.youtube.com</a>";
+
+//amazon link
+amazon.innerHTML = "Amazon.com : " + query + "<br><a href='https://www.amazon.com/s?k=" + query + "' target='blank'>www.amazon.com</a>";
+
+//pinterest link
+pinterest.innerHTML = query + " - Pinterest<br><a href='https://www.pinterest.com/search/pins/?q=" + query + "' target='blank'>www.pinterest.com</a>";
+
+//ebay link
+ebay.innerHTML = query + " | eBay<br><a href='https://www.ebay.com/sch/i.html?_nkw=" + query + "' target='blank'>www.ebay.com</a>";
+
+//reddit link
+reddit.innerHTML = "reddit.com: search results - " + query + "<br><a href='https://www.reddit.com/search/?q=" + query + "' target='blank'>www.reddit.com</a>";
+
+//instagram link
+instagram.innerHTML = query + " on Instagram • Photos and Videos<br><a href='https://www.instagram.com/explore/tags/" + query + "' target='blank'>www.instagram.com</a>";
+
+//google link
+google.innerHTML = query + " - Google Search<br><a href='https://www.google.com/search?q=" + query + "' target='blank'>www.google.com</a>";
+
+//twitter link
+twitter.innerHTML = query + " - Twitter Search / Twitter<br><a href='https://twitter.com/search?q=" + query + "' target='blank'>twitter.com</a>";
 </script>
 </body>
 </html>
