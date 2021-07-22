@@ -105,11 +105,11 @@ font-size: 15px;
 </style>
 </head>
 <body>
-<p id="logo">Galaxy</p>
+<p id="logo" onclick="home()">Galaxy</p>
 
 <div id="container">
   <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
-  <form action="results" id="form">
+  <form action="search" id="form">
     <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
   </form>
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
@@ -123,10 +123,14 @@ font-size: 15px;
   <a href="#">Settings</a>
 </p>
 <script>
+var query = location.search.split("=")[1].replace(/\+/gi, " ");
 var input = document.getElementById("input");
 
-input.value = location.search.split("=")[1];
-input.value = input.value.replace(/+/gi, " ");
+input.value = query
+
+function home() {
+location.replace("https://lb123658.github.io/galaxy");
+}
 </script>
 </body>
 </html>
