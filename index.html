@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy search</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+.button {
+background: #5765f2;
+}
+#logo {
+position: absolute;
+top: 100px;
+left: 0px;
+width: 100%;
+text-align: center;
+font-size: 60px;
+user-select: none;
+}
+#container {
+position: absolute;
+top: 250px;
+left: 50%;
+width: 600px;
+margin-left: -300px;
+height: 50px;
+background: #3b4351;
+border-radius: 8px;
+border: 3px solid #2F3137;
+}
+@media screen and (max-width: 650px) {
+  #container {
+    width: 100%;
+    margin-left: 0px;
+    left: 0px;
+  }
+}
+#search-icon {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+color: grey;
+}
+#input {
+position: absolute;
+top: 0px;
+left: 50px;
+width: 500px;
+height: 50px;
+background: transparent;
+border: none;
+font-size: 20px;
+}
+#search-submit {
+position: absolute;
+top: 0px;
+left: 550px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+cursor: pointer;
+}
+#search-submit:hover {
+background: #5765f2;
+}
+#search-submit:focus {
+background: grey;
+}
+</style>
+</head>
+<body>
+<p id="logo">Galaxy</p>
 
+<div id="container">
+  <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
+  <form action="results" id="form">
+    <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
+  </form>
+  <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
+</div>
+
+</body>
+</html>
