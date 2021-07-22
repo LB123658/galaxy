@@ -89,6 +89,15 @@ color: grey;
 text-decoration: none;
 font-size: 15px;
 }
+#top {
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 90px;
+background: #2F3137;
+z-index: 1;
+}
 @media screen and (max-width: 800px) {
   #container {
     width: 100%;
@@ -102,9 +111,22 @@ font-size: 15px;
     visibility: hidden;
   }
 }
+#results {
+position: absolute;
+top: 130px;
+width: 50%;
+left: 5%;
+min-height: 100px;
+min-width: 500px;
+background: #3b4351;
+border-radius: 8px;
+padding: 10px;
+font-size: 17px;
+}
 </style>
 </head>
 <body>
+<div id="top">
 <p id="logo" onclick="home()">Galaxy</p>
 
 <div id="container">
@@ -114,7 +136,7 @@ font-size: 15px;
   </form>
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
 </div>
-
+</div>
 <p id="link-row">
   <a href="about">About Galaxy</a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -122,14 +144,55 @@ font-size: 15px;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="#">Settings</a>
 </p>
+
+<!-- all results -->
+<div id="results">
+  <div id="non-search">
+    <p>Not many results that matched your search came up.</p>
+    <p>Check to make sure it is spelled right.</p>
+  </div>
+  
+<div id="real-results">
+<span id="first"></span>
+<br><br>
+<span id="wikipedia"></span>
+<br><br>
+<span id="youtube"></span>
+<br><br>
+<span id="amazon"></span>
+<br><br>
+<span id="pinterest"></span>
+<br><br>
+<span id="ebay"></span>
+<br><br>
+<span id="reddit"></span>
+<br><br>
+<span id="instagram"></span>
+<br><br>
+<span id="google"></span>
+<br><br>
+<span id="twitter"></span>
+<br><br>
+</div>
+
+</div>
+
 <script>
 var query = location.search.split("=")[1].replace(/\+/gi, " ");
 var input = document.getElementById("input");
+var results = document.getElementById("results");
+var non = document.getElementById("non-search");
+var real = document.getElementById("real-results");
 
 input.value = query
 
 function home() {
 location.replace("https://lb123658.github.io/galaxy");
+}
+if (query.length > 0) {
+non.remove();
+} else {
+real.remove();
 }
 </script>
 </body>
