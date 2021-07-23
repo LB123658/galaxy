@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title id="t">Galaxy search results</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+.button {
+background: #5765f2;
+}
+#logo {
+position: absolute;
+top: 5px;
+left: 10px;
+font-size: 24px;
+user-select: none;
+}
+#container {
+position: absolute;
+top: 20px;
+left: 100px;
+width: 600px;
+height: 50px;
+background: #3b4351;
+border-radius: 8px;
+}
+#search-icon {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+color: grey;
+}
+#input {
+position: absolute;
+top: 0px;
+left: 50px;
+width: 500px;
+height: 50px;
+background: transparent;
+border: none;
+font-size: 20px;
+}
+#search-submit {
+position: absolute;
+top: 0px;
+right: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+cursor: pointer;
+}
+#search-submit:hover {
+background: #5765f2;
+}
+#search-submit:focus {
+background: grey;
+}
+#link-row {
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 100%;
+text-align: center;
+}
+a {
+color: grey;
+text-decoration: none;
+font-size: 15px;
+}
+#top {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 115px;
+background: #2F3137;
+z-index: 1;
+}
+#results {
+position: absolute;
+top: 130px;
+width: 50%;
+left: 5%;
+min-height: 100px;
+min-width: 500px;
+background: #3b4351;
+border-radius: 8px;
+padding: 20px;
+font-size: 17px;
+}
+span a:hover {
+text-decoration: underline;
+}
+#pages-banner {
+position: absolute;
+top: 70px;
+left: 110px;
+user-select: none;
+-webkit-user-select: none;
+cursor: pointer;
+text-align: left;
+width: 500px;
+}
+@media screen and (max-width: 800px) {
+  #container {
+    width: 100%;
+    margin-left: 0px;
+    left: 0px;
+  }
+  #input {
+    width: 80%;
+  }
+  #logo {
+    visibility: hidden;
+  }
+  #pages-banner {
+    left: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  #results {
+  width: 85%;
+  }
+}
+</style>
+</head>
+<body onload="checkTab()">
+<div id="top">
+<p id="logo" onclick="home()">Galaxy</p>
+
+<!-- pages tabs at top -->
+<p id="pages-banner">
+  <a href="#" id="web-tab">Web</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="img-tab">Images</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="vid-tab">Videos</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="mus-tab">Music</a>
+</p>
+
+<div id="container">
+  <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
+  <form action="videos" id="form">
+    <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
+  </form>
+  <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
+</div>
+</div>
+
+<!-- all results -->
+<div id="results">
+  <div id="non-search">
+    <p>Galaxy video results coming soon.</p>
+  </div>
+  
+<div id="real-results">
+<span id="first"></span>
+<br><br>
+<span id="wikipedia"></span>
+<br><br>
+<span id="youtube"></span>
+<br><br>
+<span id="amazon"></span>
+<br><br>
+<span id="pinterest"></span>
+<br><br>
+<span id="ebay"></span>
+<br><br>
+<span id="reddit"></span>
+<br><br>
+<span id="instagram"></span>
+<br><br>
+<span id="google"></span>
+<br><br>
+<span id="twitter"></span>
+<br><br>
+<span id="duckduckgo"></span>
+<br><br>
+<span id="ecosia"></span>
+<br><br>
+<span id="yandex"></span>
+<br><br>
+<span id="yahoonews"></span>
+<br><br>
+<span id="cnn"></span>
+<br><br>
+<span id="nytimes"></span>
+<br><br>
+<span id="spotify"></span>
+<br><br>
+<span id="soundcloud"></span>
+<br><br>
+<span id="wikihow"></span>
+<br><br>
+<span id="github"></span>
+<br><br>
+<span id="stackoverflow"></span>
+<br><br>
+</div>
+<br><br><br>
+<p id="link-row">
+  <a href="about">About Galaxy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="privacy">Privacy Policy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#">Settings</a>
+</p>
+</div>
+
+<script>
+var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
+var input = document.getElementById("input");
+var results = document.getElementById("results");
+var non = document.getElementById("non-search");
+var real = document.getElementById("real-results");
+
+//result links
+var first = document.getElementById("first");
+var wikipedia = document.getElementById("wikipedia");
+var youtube = document.getElementById("youtube");
+var amazon = document.getElementById("amazon");
+var pinterest = document.getElementById("pinterest");
+var ebay = document.getElementById("ebay");
+var reddit = document.getElementById("reddit");
+var instagram = document.getElementById("instagram");
+var google = document.getElementById("google");
+var twitter = document.getElementById("twitter");
+var duckduckgo = document.getElementById("duckduckgo");
+var ecosia = document.getElementById("ecosia");
+var yandex = document.getElementById("yandex");
+var yahoonews = document.getElementById("yahoonews");
+var cnn = document.getElementById("cnn");
+var nytimes = document.getElementById("nytimes");
+var spotify = document.getElementById("spotify");
+var soundcloud = document.getElementById("soundcloud");
+var wikihow = document.getElementById("wikihow");
+var github = document.getElementById("github");
+var stackoverflow = document.getElementById("stackoverflow");
+
+//page tabs at top of page
+var web = document.getElementById("web-tab");
+var img = document.getElementById("img-tab");
+var vid = document.getElementById("vid-tab");
+var mus = document.getElementById("mus-tab");
+
+input.value = query
+
+function home() {
+location.replace("https://lb123658.github.io/galaxy");
+}
+
+non.innerHTML = "Video results coming soon.";
+real.remove();
+document.getElementById("t").innerHTML = query + " - Galaxy Video Search";
+
+function checkTab() {
+web.href = "search" + location.search;
+img.href = "images" + location.search;
+vid.href = "videos" + location.search;
+mus.href = "music" + location.search;
+vid.style.color = "lightgrey";
+vid.style.fontWeight = "bold";
+}
+</script>
+</body>
+</html>
