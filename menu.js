@@ -1,6 +1,6 @@
 function div() {
 var container = document.createElement("div");
-container.style.position = "absolute";
+container.style.position = "fixed";
 container.style.top = "0px";
 container.style.right = "0px";
 container.style.width = "200px";
@@ -30,7 +30,7 @@ document.body.appendChild(menu);
 
 var x = document.createElement("button");
 x.innerHTML = "<span class='material-icons'>close</span>";
-x.style.position = "absolute";
+x.style.position = "fixed";
 x.style.top = "10px";
 x.style.right = "10px";
 x.style.zIndex = "11";
