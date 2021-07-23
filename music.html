@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title id="t">Galaxy music search results</title>
+<title id="t">Galaxy search results</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
@@ -166,7 +166,7 @@ width: 500px;
 
 <div id="container">
   <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
-  <form action="music" id="form">
+  <form action="videos" id="form">
     <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
   </form>
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
@@ -176,7 +176,7 @@ width: 500px;
 <!-- all results -->
 <div id="results">
   <div id="non-search">
-    <p>Galaxy video results coming soon.</p>
+    <p>There were no videos that matched your search.</p>
   </div>
   
 <div id="real-results">
@@ -197,30 +197,6 @@ width: 500px;
 <span id="instagram"></span>
 <br><br>
 <span id="google"></span>
-<br><br>
-<span id="twitter"></span>
-<br><br>
-<span id="duckduckgo"></span>
-<br><br>
-<span id="ecosia"></span>
-<br><br>
-<span id="yandex"></span>
-<br><br>
-<span id="yahoonews"></span>
-<br><br>
-<span id="cnn"></span>
-<br><br>
-<span id="nytimes"></span>
-<br><br>
-<span id="spotify"></span>
-<br><br>
-<span id="soundcloud"></span>
-<br><br>
-<span id="wikihow"></span>
-<br><br>
-<span id="github"></span>
-<br><br>
-<span id="stackoverflow"></span>
 <br><br>
 </div>
 <br><br><br>
@@ -250,18 +226,6 @@ var ebay = document.getElementById("ebay");
 var reddit = document.getElementById("reddit");
 var instagram = document.getElementById("instagram");
 var google = document.getElementById("google");
-var twitter = document.getElementById("twitter");
-var duckduckgo = document.getElementById("duckduckgo");
-var ecosia = document.getElementById("ecosia");
-var yandex = document.getElementById("yandex");
-var yahoonews = document.getElementById("yahoonews");
-var cnn = document.getElementById("cnn");
-var nytimes = document.getElementById("nytimes");
-var spotify = document.getElementById("spotify");
-var soundcloud = document.getElementById("soundcloud");
-var wikihow = document.getElementById("wikihow");
-var github = document.getElementById("github");
-var stackoverflow = document.getElementById("stackoverflow");
 
 //page tabs at top of page
 var web = document.getElementById("web-tab");
@@ -275,9 +239,37 @@ function home() {
 location.replace("https://lb123658.github.io/galaxy");
 }
 
-non.innerHTML = "Music results coming soon.";
+if (query.length > 0) {
+non.remove();
+} else {
 real.remove();
+}
+
+// LOAD VIDEO RESULTS ------------------------------------
+function loadmusicResults() {
+//load new title
 document.getElementById("t").innerHTML = query + " - Galaxy Music Search";
+
+first.innerHTML = "Galaxy music results are still being improved.";
+
+wikipedia.innerHTML = query + " - Spotify Web Player<br><a href='https://open.spotify.com/search/" + query + "' target='blank'>open.spotify.com</a>";
+
+
+youtube.innerHTML = query + " - YouTube Music<br><a href='https://music.youtube.com/search?q=" + query + "' target='blank'>music.youtube.com</a>";
+
+amazon.innerHTML = query + " - Soundcloud<br><a href='https://soundcloud.com/search?q=" + query + "' target='blank'>soundcloud.com</a>";
+
+pinterest.innerHTML = query + " - Amazon Music Unlimited<br><a href='https://music.amazon.com/search/" + query + "' target='blank'>music.amazon.com</a>";
+
+ebay.innerHTML = query + " - Apple Music<br><a href='https://music.apple.com/us/search?term=" + query + "' target='blank'>music.apple.com</a>";
+
+reddit.innerHTML = query + " - Search - Pandora<br><a href='https://www.pandora.com/search/" + query + "' target='blank'>www.pandora.com</a>";
+
+instagram.innerHTML = query + " - Qwant Music<br><a href='https://www.qwant.com/music/search?q=" + query + "' target='blank'>www.qwant.com</a>";
+
+google.innerHTML = query + " - Deezer<br><a href='https://www.deezer.com/search/" + query + "' target='blank'>www.deezer.com</a>";
+}
+loadmusicResults();
 
 function checkTab() {
 web.href = "search" + location.search;
