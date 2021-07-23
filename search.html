@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,7 +129,7 @@ text-decoration: underline;
 }
 </style>
 </head>
-<body>
+<body onload="loadwebResults()">
 <div id="top">
 <p id="logo" onclick="home()">Galaxy</p>
 
@@ -244,12 +245,13 @@ real.remove();
 }
 
 //LOAD SEARCH RESULTS -----------------------------------------------
+
+
+
+
+function loadwebResults() {
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 
-//set first result to a website if website is searched
-if (query.split(".")[1].length > 1) {
-first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
-} 
 //wikipedia link
 wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
 
@@ -309,6 +311,13 @@ github.innerHTML = query + " - GitHub<br><a href='https://github.com/search?q=" 
 
 //stackoverflow link
 stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br><a href='https://stackoverflow.com/search?q=" + query + "' target='blank'>stackoverflow.com</a>";
+
+
+//set first result to a website if website is searched
+if (query.split(".")[1].length > 1) {
+first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
+}
+}
 </script>
 </body>
 </html>
