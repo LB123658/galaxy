@@ -346,6 +346,9 @@ stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br>
 //set first result to a website if website is searched
 if (query.split(".")[1].length > 1) {
 first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
+  
+//load new title
+document.getElementById("t").innerHTML = query + " - Galaxy Search";
 }
 }
 
@@ -358,8 +361,6 @@ web.style.color = "lightgrey";
 web.style.fontWeight = "bold";
 }
 loadwebResults();
-
-document.getElementById("t").innerHTML = query + " - Galaxy Search";
 </script>
 </body>
 </html>
