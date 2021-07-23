@@ -245,10 +245,11 @@ real.remove();
 
 //LOAD SEARCH RESULTS -----------------------------------------------
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
-//set first result to a website if .com website is searched
-if (query.split(".")[1] == "com") {
+
+//set first result to a website if website is searched
+if (query.split(".")[1].length > 1) {
 first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
-}
+} 
 //wikipedia link
 wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
 
