@@ -228,6 +228,7 @@ var cnn = document.getElementById("cnn");
 var nytimes = document.getElementById("nytimes");
 var spotify = document.getElementById("spotify");
 var soundcloud = document.getElementById("soundcloud");
+var wikihow = document.getElementById("wikihow");
 var github = document.getElementById("github");
 var stackoverflow = document.getElementById("stackoverflow");
 
@@ -241,6 +242,7 @@ non.remove();
 } else {
 real.remove();
 }
+
 //LOAD SEARCH RESULTS -----------------------------------------------
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 //set first result to a website if .com website is searched
@@ -286,6 +288,26 @@ yandex.innerHTML = query + " - Yandex<br><a href='https://yandex.com/search/?tex
 //yahoonews link
 yahoonews.innerHTML = query + " - Yahoo Search Results<br><a href='https://news.search.yahoo.com/search?p=" + query + "' target='blank'>news.search.yahoo.com</a>";
 
+//cnn link
+cnn.innerHTML = query + " - CNN.com<br><a href='https://www.cnn.com/search?q=" + query + "' target='blank'>www.cnn.com</a>";
+
+//nytimes link
+nytimes.innerHTML = query + " - The New York Times<br><a href='https://www.nytimes.com/search?query=" + query + "' target='blank'>www.nytimes.com</a>";
+
+//spotify link
+spotify.innerHTML = query + " - Spotify Web Player<br><a href='https://open.spotify.com/search/" + query + "' target='blank'>open.spotify.com</a>";
+
+//soundcloud link
+soundcloud.innerHTML = query + " - Soundcloud<br><a href='https://soundcloud.com/search?q=" + query + "' target='blank'>soundcloud.com</a>";
+
+//wikihow link
+wikihow.innerHTML = "Search for '" + query + "' - wikihow<br><a href='https://www.wikihow.com/wikiHowTo?search=" + query + "' target='blank'>www.wikihow.com</a>";
+
+//github link
+github.innerHTML = query + " - GitHub<br><a href='https://github.com/search?q=" + query + "' target='blank'>github.com</a>";
+
+//stackoverflow link
+stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br><a href='https://stackoverflow.com/search?q=" + query + "' target='blank'>stackoverflow.com</a>";
 </script>
 </body>
 </html>
