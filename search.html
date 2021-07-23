@@ -280,6 +280,9 @@ real.remove();
 
 //LOAD SEARCH RESULTS -----------------------------------------------
 function loadwebResults() {
+//load new title
+document.getElementById("t").innerHTML = query + " - Galaxy Search";
+  
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 
 //wikipedia link
@@ -346,9 +349,6 @@ stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br>
 //set first result to a website if website is searched
 if (query.split(".")[1].length > 1) {
 first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
-  
-//load new title
-document.getElementById("t").innerHTML = query + " - Galaxy Search";
 }
 }
 
