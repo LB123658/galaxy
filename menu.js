@@ -24,6 +24,7 @@ menu.style.background = "transparent";
 menu.style.border = "none";
 menu.style.cursor = "pointer";
 menu.title = "Open Menu";
+menu.id = "menu";
 menu.onclick = function() {container.style.visibility = "visible"; x.style.visibility = "visible";};
 document.body.appendChild(menu);
 
