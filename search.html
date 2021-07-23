@@ -169,6 +169,28 @@ text-decoration: underline;
 <br><br>
 <span id="twitter"></span>
 <br><br>
+<span id="duckduckgo"></span>
+<br><br>
+<span id="ecosia"></span>
+<br><br>
+<span id="yandex"></span>
+<br><br>
+<span id="yahoonews"></span>
+<br><br>
+<span id="cnn"></span>
+<br><br>
+<span id="nytimes"></span>
+<br><br>
+<span id="spotify"></span>
+<br><br>
+<span id="soundcloud"></span>
+<br><br>
+<span id="wikihow"></span>
+<br><br>
+<span id="github"></span>
+<br><br>
+<span id="stackoverflow"></span>
+<br><br>
 </div>
 <br><br><br>
 <p id="link-row">
@@ -198,6 +220,16 @@ var reddit = document.getElementById("reddit");
 var instagram = document.getElementById("instagram");
 var google = document.getElementById("google");
 var twitter = document.getElementById("twitter");
+var duckduckgo = document.getElementById("duckduckgo");
+var ecosia = document.getElementById("ecosia");
+var yandex = document.getElementById("yandex");
+var yahoonews = document.getElementById("yahoonews");
+var cnn = document.getElementById("cnn");
+var nytimes = document.getElementById("nytimes");
+var spotify = document.getElementById("spotify");
+var soundcloud = document.getElementById("soundcloud");
+var github = document.getElementById("github");
+var stackoverflow = document.getElementById("stackoverflow");
 
 input.value = query
 
@@ -213,7 +245,7 @@ real.remove();
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 //set first result to a website if .com website is searched
 if (query.split(".")[1] == "com") {
-first.innerHTML = query + " - website<br><a href='https://" + query + "'>" + query + "</a>";
+first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
 }
 //wikipedia link
 wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
@@ -241,6 +273,19 @@ google.innerHTML = query + " - Google Search<br><a href='https://www.google.com/
 
 //twitter link
 twitter.innerHTML = query + " - Twitter Search / Twitter<br><a href='https://twitter.com/search?q=" + query + "' target='blank'>twitter.com</a>";
+
+//duckduckgo link
+duckduckgo.innerHTML = query + " at DuckDuckGo<br><a href='https://duckduckgo.com/?q=" + query + "' target='blank'>duckduckgo.com</a>";
+
+//ecosia link
+ecosia.innerHTML = query + " - Ecosia<br><a href='https://www.ecosia.org/search?q=" + query + "' target='blank'>www.ecosia.org</a>";
+
+//yandex link
+yandex.innerHTML = query + " - Yandex<br><a href='https://yandex.com/search/?text=" + query + "' target='blank'>yandex.com</a>";
+
+//yahoonews link
+yahoonews.innerHTML = query + " - Yahoo Search Results<br><a href='https://news.search.yahoo.com/search?p=" + query + "' target='blank'>news.search.yahoo.com</a>";
+
 </script>
 </body>
 </html>
