@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,7 +177,7 @@ width: 500px;
 <!-- all results -->
 <div id="results">
   <div id="non-search">
-    <p>Galaxy video results coming soon.</p>
+    <p>There were no videos that matched your search.</p>
   </div>
   
 <div id="real-results">
@@ -197,30 +198,6 @@ width: 500px;
 <span id="instagram"></span>
 <br><br>
 <span id="google"></span>
-<br><br>
-<span id="twitter"></span>
-<br><br>
-<span id="duckduckgo"></span>
-<br><br>
-<span id="ecosia"></span>
-<br><br>
-<span id="yandex"></span>
-<br><br>
-<span id="yahoonews"></span>
-<br><br>
-<span id="cnn"></span>
-<br><br>
-<span id="nytimes"></span>
-<br><br>
-<span id="spotify"></span>
-<br><br>
-<span id="soundcloud"></span>
-<br><br>
-<span id="wikihow"></span>
-<br><br>
-<span id="github"></span>
-<br><br>
-<span id="stackoverflow"></span>
 <br><br>
 </div>
 <br><br><br>
@@ -250,18 +227,6 @@ var ebay = document.getElementById("ebay");
 var reddit = document.getElementById("reddit");
 var instagram = document.getElementById("instagram");
 var google = document.getElementById("google");
-var twitter = document.getElementById("twitter");
-var duckduckgo = document.getElementById("duckduckgo");
-var ecosia = document.getElementById("ecosia");
-var yandex = document.getElementById("yandex");
-var yahoonews = document.getElementById("yahoonews");
-var cnn = document.getElementById("cnn");
-var nytimes = document.getElementById("nytimes");
-var spotify = document.getElementById("spotify");
-var soundcloud = document.getElementById("soundcloud");
-var wikihow = document.getElementById("wikihow");
-var github = document.getElementById("github");
-var stackoverflow = document.getElementById("stackoverflow");
 
 //page tabs at top of page
 var web = document.getElementById("web-tab");
@@ -275,9 +240,36 @@ function home() {
 location.replace("https://lb123658.github.io/galaxy");
 }
 
-non.innerHTML = "Video results coming soon.";
+if (query.length > 0) {
+non.remove();
+} else {
 real.remove();
+}
+
+// LOAD VIDEO RESULTS ------------------------------------
+function loadvideoResults() {
+//load new title
 document.getElementById("t").innerHTML = query + " - Galaxy Video Search";
+
+first.innerHTML = "Galaxy video results are still being improved.";
+
+wikipedia.innerHTML = query + " in videos on Vimeo<br><a href='https://vimeo.com/search?q=" + query + "' target='blank'>vimeo.com</a>";
+
+youtube.innerHTML = query + " - YouTube<br><a href='https://www.youtube.com/results?search_query=" + query + "' target='blank'>www.youtube.com</a>";
+
+amazon.innerHTML = query + " - Twitch<br><a href='https://www.twitch.tv/search?term=" + query + "' target='blank'>www.twitch.com</a>";
+
+pinterest.innerHTML = "Find '" + query + "' on TikTok | TikTok Search<br><a href='https://www.tiktok.com/search?q=" + query + "' target='blank'>www.tiktok.com</a>";
+
+ebay.innerHTML = query + " videos - Dailymotion<br><a href='https://www.dailymotion.com/search/" + query + "/videos' target='blank'>www.dailymotion.com</a>";
+
+reddit.innerHTML = query + " | Search Results | TED<br><a href='https://www.ted.com/search?q=" + query + "' target='blank'>www.ted.com</a>";
+
+instagram.innerHTML = query + " - Brave Search<br><a href='https://search.brave.com/videos?q=" + query + "' target='blank'>search.brave.com</a>";
+
+google.innerHTML = query + " - Ecosia - Videos<br><a href='https://www.ecosia.org/videos?q=" + query + "' target='blank'>www.ecosia.org</a>";
+}
+loadvideoResults();
 
 function checkTab() {
 web.href = "search" + location.search;
