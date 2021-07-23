@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Galaxy search results</title>
+<title id="t">Galaxy search results</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
@@ -94,22 +94,9 @@ position: fixed;
 top: 0px;
 left: 0px;
 width: 100%;
-height: 90px;
+height: 115px;
 background: #2F3137;
 z-index: 1;
-}
-@media screen and (max-width: 800px) {
-  #container {
-    width: 100%;
-    margin-left: 0px;
-    left: 0px;
-  }
-  #input {
-    width: 80%;
-  }
-  #logo {
-    visibility: hidden;
-  }
 }
 #results {
 position: absolute;
@@ -126,11 +113,53 @@ font-size: 17px;
 span a:hover {
 text-decoration: underline;
 }
+#pages-banner {
+position: absolute;
+top: 70px;
+left: 110px;
+user-select: none;
+-webkit-user-select: none;
+cursor: pointer;
+text-align: left;
+width: 500px;
+}
+@media screen and (max-width: 800px) {
+  #container {
+    width: 100%;
+    margin-left: 0px;
+    left: 0px;
+  }
+  #input {
+    width: 80%;
+  }
+  #logo {
+    visibility: hidden;
+  }
+  #pages-banner {
+    left: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  #results {
+  width: 85%;
+  }
+}
 </style>
 </head>
-<body onload="loadwebResults()">
+<body onload="checkTab()">
 <div id="top">
 <p id="logo" onclick="home()">Galaxy</p>
+
+<!-- pages tabs at top -->
+<p id="pages-banner">
+  <a href="#" id="web-tab">Web</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="img-tab">Images</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="vid-tab">Videos</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#" id="mus-tab">Music</a>
+</p>
 
 <div id="container">
   <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
@@ -203,7 +232,7 @@ text-decoration: underline;
 </div>
 
 <script>
-var query = location.search.split("=")[1].replace(/\+/gi, " ");
+var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var input = document.getElementById("input");
 var results = document.getElementById("results");
 var non = document.getElementById("non-search");
@@ -232,6 +261,12 @@ var wikihow = document.getElementById("wikihow");
 var github = document.getElementById("github");
 var stackoverflow = document.getElementById("stackoverflow");
 
+//page tabs at top of page
+var web = document.getElementById("web-tab");
+var img = document.getElementById("img-tab");
+var vid = document.getElementById("vid-tab");
+var mus = document.getElementById("mus-tab");
+
 input.value = query
 
 function home() {
@@ -244,10 +279,6 @@ real.remove();
 }
 
 //LOAD SEARCH RESULTS -----------------------------------------------
-
-
-
-
 function loadwebResults() {
 first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
 
@@ -317,6 +348,16 @@ if (query.split(".")[1].length > 1) {
 first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
 }
 }
+
+function checkTab() {
+web.href = "search" + location.search;
+img.href = "images" + location.search;
+vid.href = "videos" + location.search;
+mus.href = "music" + location.search;
+}
+loadwebResults();
+
+document.getElementById("t").innerHTML = query + " - Galaxy Search";
 </script>
 </body>
 </html>
