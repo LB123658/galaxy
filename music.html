@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title id="t">Galaxy search results</title>
+<title id="t">Galaxy music search results</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
@@ -164,7 +164,7 @@ width: 500px;
 
 <div id="container">
   <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
-  <form action="videos" id="form">
+  <form action="music" id="form">
     <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
   </form>
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
@@ -273,9 +273,9 @@ function home() {
 location.replace("https://lb123658.github.io/galaxy");
 }
 
-non.innerHTML = "Video results coming soon.";
+non.innerHTML = "Music results coming soon.";
 real.remove();
-document.getElementById("t").innerHTML = query + " - Galaxy Video Search";
+document.getElementById("t").innerHTML = query + " - Galaxy Music Search";
 
 function checkTab() {
 web.href = "search" + location.search;
