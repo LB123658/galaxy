@@ -1,0 +1,46 @@
+function div() {
+var container = document.createElement("div");
+container.style.position = "absolute";
+container.style.top = "0px";
+container.style.right = "0px";
+container.style.width = "200px";
+container.style.height = "100%";
+container.style.zIndex = "10";
+container.style.background = "#3b4451";
+container.style.fontSize = "25px";
+container.style.textAlign = "left";
+container.style.padding = "10px";
+container.style.visibility = "hidden";
+container.style.overflowY = "hidden";
+container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
+document.body.appendChild(container);
+var menu = document.createElement("button");
+menu.innerHTML = "<span class='material-icons'>menu</span>";
+menu.style.position = "absolute";
+menu.style.top = "10px";
+menu.style.right = "10px";
+menu.style.zIndex = "9";
+menu.style.background = "transparent";
+menu.style.border = "none";
+menu.style.cursor = "pointer";
+menu.title = "Open Menu";
+menu.onclick = function() {container.style.visibility = "visible"; x.style.visibility = "visible";};
+document.body.appendChild(menu);
+
+var x = document.createElement("button");
+x.innerHTML = "<span class='material-icons'>close</span>";
+x.style.position = "absolute";
+x.style.top = "10px";
+x.style.right = "10px";
+x.style.zIndex = "11";
+x.style.background = "transparent";
+x.style.border = "none";
+x.style.cursor = "pointer";
+x.title = "Close Menu";
+x.style.visibility = "hidden";
+x.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
+document.body.appendChild(x);
+var close = document.getElementById("close");
+close.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
+}
+div();
