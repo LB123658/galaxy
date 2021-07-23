@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy search results</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/tea/img/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+.button {
+background: #5765f2;
+}
+#logo {
+position: absolute;
+top: 5px;
+left: 10px;
+font-size: 24px;
+user-select: none;
+}
+#container {
+position: absolute;
+top: 20px;
+left: 100px;
+width: 600px;
+height: 50px;
+background: #3b4351;
+border-radius: 8px;
+}
+#search-icon {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+color: grey;
+}
+#input {
+position: absolute;
+top: 0px;
+left: 50px;
+width: 500px;
+height: 50px;
+background: transparent;
+border: none;
+font-size: 20px;
+}
+#search-submit {
+position: absolute;
+top: 0px;
+right: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+cursor: pointer;
+}
+#search-submit:hover {
+background: #5765f2;
+}
+#search-submit:focus {
+background: grey;
+}
+#link-row {
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 100%;
+text-align: center;
+}
+a {
+color: grey;
+text-decoration: none;
+font-size: 15px;
+}
+#top {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 90px;
+background: #2F3137;
+z-index: 1;
+}
+@media screen and (max-width: 800px) {
+  #container {
+    width: 100%;
+    margin-left: 0px;
+    left: 0px;
+  }
+  #input {
+    width: 80%;
+  }
+  #logo {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 920px) {
+  #quick {
+    visibility: hidden;
+   }
+ }
+#results {
+position: absolute;
+top: 130px;
+width: 50%;
+left: 5%;
+min-height: 100px;
+min-width: 500px;
+background: #3b4351;
+border-radius: 8px;
+padding: 20px;
+font-size: 17px;
+}
+span a:hover {
+text-decoration: underline;
+}
+#quick {
+position: absolute;
+top: 130px;
+width: 25%;
+left: 65%;
+min-height: 100px;
+background: #3b4351;
+border-radius: 8px;
+padding: 20px;
+font-size: 17px;
+}
+</style>
+</head>
+<body>
+<div id="top">
+<p id="logo" onclick="home()">Galaxy</p>
+
+<div id="container">
+  <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
+  <form action="search" id="form">
+    <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
+  </form>
+  <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
+</div>
+</div>
+
+<!-- all results -->
+<div id="results">
+  <div id="non-search">
+    <p>Not many results that matched your search came up.</p>
+    <p>Check to make sure it is spelled right.</p>
+  </div>
+  
+<div id="real-results">
+<span id="first"></span>
+<br><br>
+<span id="wikipedia"></span>
+<br><br>
+<span id="youtube"></span>
+<br><br>
+<span id="amazon"></span>
+<br><br>
+<span id="pinterest"></span>
+<br><br>
+<span id="ebay"></span>
+<br><br>
+<span id="reddit"></span>
+<br><br>
+<span id="instagram"></span>
+<br><br>
+<span id="google"></span>
+<br><br>
+<span id="twitter"></span>
+<br><br>
+<span id="duckduckgo"></span>
+<br><br>
+<span id="ecosia"></span>
+<br><br>
+<span id="yandex"></span>
+<br><br>
+<span id="yahoonews"></span>
+<br><br>
+<span id="cnn"></span>
+<br><br>
+<span id="nytimes"></span>
+<br><br>
+<span id="spotify"></span>
+<br><br>
+<span id="soundcloud"></span>
+<br><br>
+<span id="wikihow"></span>
+<br><br>
+<span id="github"></span>
+<br><br>
+<span id="stackoverflow"></span>
+<br><br>
+</div>
+<br><br><br>
+<p id="link-row">
+  <a href="about">About Galaxy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="privacy">Privacy Policy</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="#">Settings</a>
+</p>
+</div>
+
+<!-- wikipedia quick results -->
+<div id="quick">
+
+</div>
+<script>
+var query = location.search.split("=")[1].replace(/\+/gi, " ");
+var input = document.getElementById("input");
+var results = document.getElementById("results");
+var non = document.getElementById("non-search");
+var real = document.getElementById("real-results");
+
+//result links
+var first = document.getElementById("first");
+var wikipedia = document.getElementById("wikipedia");
+var youtube = document.getElementById("youtube");
+var amazon = document.getElementById("amazon");
+var pinterest = document.getElementById("pinterest");
+var ebay = document.getElementById("ebay");
+var reddit = document.getElementById("reddit");
+var instagram = document.getElementById("instagram");
+var google = document.getElementById("google");
+var twitter = document.getElementById("twitter");
+var duckduckgo = document.getElementById("duckduckgo");
+var ecosia = document.getElementById("ecosia");
+var yandex = document.getElementById("yandex");
+var yahoonews = document.getElementById("yahoonews");
+var cnn = document.getElementById("cnn");
+var nytimes = document.getElementById("nytimes");
+var spotify = document.getElementById("spotify");
+var soundcloud = document.getElementById("soundcloud");
+var wikihow = document.getElementById("wikihow");
+var github = document.getElementById("github");
+var stackoverflow = document.getElementById("stackoverflow");
+var quick = document.getElementById("quick");
+
+input.value = query
+
+function home() {
+location.replace("https://lb123658.github.io/galaxy");
+}
+if (query.length > 0) {
+non.remove();
+} else {
+real.remove();
+}
+
+//LOAD SEARCH RESULTS -----------------------------------------------
+first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
+//set first result to a website if .com website is searched
+if (query.split(".")[1] == "com") {
+first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
+}
+//wikipedia link
+wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
+
+//youtube link
+youtube.innerHTML = query + " - YouTube<br><a href='https://www.youtube.com/results?search_query=" + query + "' target='blank'>www.youtube.com</a>";
+
+//amazon link
+amazon.innerHTML = "Amazon.com : " + query + "<br><a href='https://www.amazon.com/s?k=" + query + "' target='blank'>www.amazon.com</a>";
+
+//pinterest link
+pinterest.innerHTML = query + " - Pinterest<br><a href='https://www.pinterest.com/search/pins/?q=" + query + "' target='blank'>www.pinterest.com</a>";
+
+//ebay link
+ebay.innerHTML = query + " | eBay<br><a href='https://www.ebay.com/sch/i.html?_nkw=" + query + "' target='blank'>www.ebay.com</a>";
+
+//reddit link
+reddit.innerHTML = "reddit.com: search results - " + query + "<br><a href='https://www.reddit.com/search/?q=" + query + "' target='blank'>www.reddit.com</a>";
+
+//instagram link
+instagram.innerHTML = query + " on Instagram • Photos and Videos<br><a href='https://www.instagram.com/explore/tags/" + query + "' target='blank'>www.instagram.com</a>";
+
+//google link
+google.innerHTML = query + " - Google Search<br><a href='https://www.google.com/search?q=" + query + "' target='blank'>www.google.com</a>";
+
+//twitter link
+twitter.innerHTML = query + " - Twitter Search / Twitter<br><a href='https://twitter.com/search?q=" + query + "' target='blank'>twitter.com</a>";
+
+//duckduckgo link
+duckduckgo.innerHTML = query + " at DuckDuckGo<br><a href='https://duckduckgo.com/?q=" + query + "' target='blank'>duckduckgo.com</a>";
+
+//ecosia link
+ecosia.innerHTML = query + " - Ecosia<br><a href='https://www.ecosia.org/search?q=" + query + "' target='blank'>www.ecosia.org</a>";
+
+//yandex link
+yandex.innerHTML = query + " - Yandex<br><a href='https://yandex.com/search/?text=" + query + "' target='blank'>yandex.com</a>";
+
+//yahoonews link
+yahoonews.innerHTML = query + " - Yahoo Search Results<br><a href='https://news.search.yahoo.com/search?p=" + query + "' target='blank'>news.search.yahoo.com</a>";
+
+//cnn link
+cnn.innerHTML = query + " - CNN.com<br><a href='https://www.cnn.com/search?q=" + query + "' target='blank'>www.cnn.com</a>";
+
+//nytimes link
+nytimes.innerHTML = query + " - The New York Times<br><a href='https://www.nytimes.com/search?query=" + query + "' target='blank'>www.nytimes.com</a>";
+
+//spotify link
+spotify.innerHTML = query + " - Spotify Web Player<br><a href='https://open.spotify.com/search/" + query + "' target='blank'>open.spotify.com</a>";
+
+//soundcloud link
+soundcloud.innerHTML = query + " - Soundcloud<br><a href='https://soundcloud.com/search?q=" + query + "' target='blank'>soundcloud.com</a>";
+
+//wikihow link
+wikihow.innerHTML = "Search for '" + query + "' - wikihow<br><a href='https://www.wikihow.com/wikiHowTo?search=" + query + "' target='blank'>www.wikihow.com</a>";
+
+//github link
+github.innerHTML = query + " - GitHub<br><a href='https://github.com/search?q=" + query + "' target='blank'>github.com</a>";
+
+//stackoverflow link
+stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br><a href='https://stackoverflow.com/search?q=" + query + "' target='blank'>stackoverflow.com</a>";
+
+
+// QUICK RESULTS FROM WIKIPEDIA ----------------------
+fetch("https://en.wikipedia.org/wiki/" + query)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.text().then(function(data) {
+        // data contains all the plain html of the url you previously set, 
+        // you can use it as you want, it is typeof string
+        console.log(data)
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+quick.innerHTML = data;
+quick.innerHTML = quick.innerHTML.split("\n")[61].split("\n")[0];
+</script>
+</body>
+</html>
