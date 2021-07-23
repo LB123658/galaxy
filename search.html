@@ -123,6 +123,18 @@ cursor: pointer;
 text-align: left;
 width: 500px;
 }
+#quick {
+position: absolute;
+top: 130px;
+left: 65%;
+width: 25%;
+background: #3b4351;
+border-radius: 8px;
+padding: 20px;
+font-size: 17px;
+min-height: 100px;
+visibility: hidden;
+}
 @media screen and (max-width: 800px) {
   #container {
     width: 100%;
@@ -145,6 +157,14 @@ width: 500px;
   }
   #menu {
     visibility: hidden;
+  }
+  #quick {
+    display: none;
+  }
+}
+@media screen and (max-width: 910px) {
+  #quick {
+  left: 600px;
   }
 }
 </style>
@@ -171,6 +191,11 @@ width: 500px;
   </form>
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
 </div>
+</div>
+
+<!-- quick answer -->
+<div id="quick">
+  <p>There was a problem loading this section.</p>
 </div>
 
 <!-- all results -->
