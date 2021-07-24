@@ -1,4 +1,3 @@
-
 // JUST FOR THE FIRST SUGGESTION
 function setquickAnswer() {
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
@@ -65,6 +64,14 @@ quick.style.visibility = "visible";
 } else if (text == "yemen") {
 first.innerHTML = "Yemen - Wikipedia<br><a href='https://wikipedia.org/wiki/" + text + "' target='blank'>wikipedia.org</a>";
 quick.innerHTML = "<b>Yemen</b<br><p>Yemen (Arabic: ٱلْيَمَن), officially the Republic of Yemen, is a country in Western Asia, on the southern end of the Arabian Peninsula. It borders Saudi Arabia to the north and Oman to the northeast and shares maritime borders with Eritrea, Djibouti, and Somalia. It is the second-largest Arab sovereign state in the peninsula, occupying 527,970 square kilometres (203,850 square miles). The coastline stretches for about 2,000 kilometres (1,200 miles). Yemen's constitutionally stated capital, and largest city, is the city of Sanaa, but the city has been under Houthi rebel control since February 2015 as well as Aden, which is also controlled by the Southern Transitional Council since 2018. Its executive administration resides in Riyadh, Saudi Arabia.</p><br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Yemen.svg/250px-Flag_of_Yemen.svg.png' style='width:100%'>";
+quick.style.visibility = "visible";
+} else if (text == "vietnam") {
+first.innerHTML = "Vietnam - Wikipedia<br><a href='https://wikipedia.org/wiki/" + text + "' target='blank'>wikipedia.org</a>";
+quick.innerHTML = "<b>Vietnam</b<br><p>Vietnam (Vietnamese: Việt Nam), officially the Socialist Republic of Vietnam, is a country in Southeast Asia. It is located at the eastern edge of the Indochinese Peninsula, and is divided into 58 provinces and five municipalities, covering 331,699 square kilometres, with a population of over 96 million inhabitants, making it the world's sixteenth-most populous country. Vietnam shares borders with China to the north, Laos and Cambodia to the west; whilst maintaining maritime borders with Thailand through the Gulf of Thailand, and the Philippines, Indonesia and Malaysia through the South China Sea. Its capital is Hanoi and its largest city is Ho Chi Minh City (Saigon).</p><br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/250px-Flag_of_Vietnam.svg.png' style='width:100%'>";
+quick.style.visibility = "visible";
+} else if (text == "venezuela") {
+first.innerHTML = "Venezuela - Wikipedia<br><a href='https://wikipedia.org/wiki/" + text + "' target='blank'>wikipedia.org</a>";
+quick.innerHTML = "<b>Venezuela</b<br><p>Venezuela, officially the Bolivarian Republic of Venezuela (Spanish: República Bolivariana de Venezuela), is a country on the northern coast of South America, consisting of a continental landmass and many islands and islets in the Caribbean Sea. It has a territorial extension of 916,445 km2 (353,841 sq mi), and the population of Venezuela was estimated at 28 million in 2019. The capital and largest urban agglomeration is the city of Caracas.</p><br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/250px-Flag_of_Venezuela.svg.png' style='width:100%'>";
 quick.style.visibility = "visible";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
