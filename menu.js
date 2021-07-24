@@ -12,7 +12,7 @@ container.style.textAlign = "left";
 container.style.padding = "10px";
 container.style.visibility = "hidden";
 container.style.overflowY = "hidden";
-container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='https://lb123658.github.io/galaxy/store'>Store</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
+container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
 document.body.appendChild(container);
 var menu = document.createElement("button");
 menu.innerHTML = "<span class='material-icons'>menu</span>";
