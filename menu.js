@@ -12,8 +12,9 @@ container.style.textAlign = "left";
 container.style.padding = "10px";
 container.style.visibility = "hidden";
 container.style.overflowY = "hidden";
-container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
+container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='#' id='share'>Share this page</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
 document.body.appendChild(container);
+
 var menu = document.createElement("button");
 menu.innerHTML = "<span class='material-icons'>menu</span>";
 menu.style.position = "absolute";
@@ -41,7 +42,32 @@ x.title = "Close Menu";
 x.style.visibility = "hidden";
 x.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
 document.body.appendChild(x);
+
+var sharing = document.createElement("div");
+sharing.style.position = "fixed";
+sharing.style.top = "200px";
+sharing.style.left = "50%";
+sharing.style.width = "300px";
+sharing.style.marginLeft = "-150px";
+sharing.style.borderRadius = "8px";
+sharing.style.zIndex = "12";
+sharing.style.fontSize = "18px";
+sharing.style.padding = "20px";
+sharing.style.background = "#282828";
+sharing.style.color = "grey";
+sharing.style.visibility = "hidden";
+sharing.innerHTML = "Share this page:<br><br><input style='width:97%; background:#3b4351; border-radius:4px; border:none; font-size:17px; padding:5px; color:lightgrey;' id='shareLink' placeholder='Sharing link' value='https://lb123658.github.io/galaxy' autocomplete='off'><button style='position:absolute; top:10px; right:10px; background:transparent; border:none; cursor:pointer;' id='shareClose' title='Close'><span class='material-icons'>close</span></button>";
+document.body.appendChild(sharing);
+
 var close = document.getElementById("close");
+var shareLink = document.getElementById("shareLink");
+var shareClose = document.getElementById("shareClose");
+var share = document.getElementById("share");
+
+shareLink.value = window.location.href;
 close.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
+shareLink.onclick = function() {shareLink.select();};
+shareClose.onclick = function() {sharing.style.visibility = "hidden"; document.body.style.pointerEvents = "auto";};
+share.onclick = function() {document.body.style.pointerEvents = "none"; sharing.style.visibility = "visible"; sharing.style.pointerEvents = "auto"; sharing.style.opacity = "2";};
 }
 div();
