@@ -50,7 +50,7 @@ sharing.style.left = "50%";
 sharing.style.width = "300px";
 sharing.style.marginLeft = "-150px";
 sharing.style.borderRadius = "8px";
-sharing.style.zIndex = "12";
+sharing.style.zIndex = "13";
 sharing.style.fontSize = "18px";
 sharing.style.padding = "20px";
 sharing.style.background = "#282828";
@@ -58,6 +58,18 @@ sharing.style.color = "grey";
 sharing.style.visibility = "hidden";
 sharing.innerHTML = "Share this page:<br><br><input style='width:97%; background:#3b4351; border-radius:4px; border:none; font-size:17px; padding:5px; color:lightgrey;' id='shareLink' placeholder='Sharing link' value='https://lb123658.github.io/galaxy' autocomplete='off'><button style='position:absolute; top:10px; right:10px; background:transparent; border:none; cursor:pointer;' id='shareClose' title='Close'><span class='material-icons'>close</span></button>";
 document.body.appendChild(sharing);
+
+var shade = document.createElement("div");
+shade.style.zIndex = "12";
+shade.style.position = "fixed";
+shade.style.top = "0px";
+shade.style.left = "0px";
+shade.style.height = "100%";
+shade.style.width = "100%";
+shade.style.background = "black";
+shade.style.opacity = "0.5";
+shade.style.visibility = "hidden";
+document.body.appendChild(shade);
 
 var close = document.getElementById("close");
 var shareLink = document.getElementById("shareLink");
@@ -67,7 +79,7 @@ var share = document.getElementById("share");
 shareLink.value = window.location.href;
 close.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
 shareLink.onclick = function() {shareLink.select();};
-shareClose.onclick = function() {sharing.style.visibility = "hidden"; document.body.style.pointerEvents = "auto";};
-share.onclick = function() {document.body.style.pointerEvents = "none"; sharing.style.visibility = "visible"; sharing.style.pointerEvents = "auto"; sharing.style.opacity = "2";};
+shareClose.onclick = function() {sharing.style.visibility = "hidden"; document.body.style.pointerEvents = "auto"; shade.style.visibility = "hidden";};
+share.onclick = function() {document.body.style.pointerEvents = "none"; sharing.style.visibility = "visible"; sharing.style.pointerEvents = "auto"; sharing.style.opacity = "2"; shade.style.visibility = "visible";};
 }
 div();
