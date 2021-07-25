@@ -5,7 +5,11 @@ var first = document.getElementById("first");
 var quick = document.getElementById("quick");
 var text = query.toLowerCase();
 
-if (text == "google") {
+if (query == "teabag") {
+first.innerHTML = "TeaBag - brewing virtual tea<br><a href='https://lb123658.github.io/tea' target='blank'><button style='background:grey; border:none; font-size:18px; cursor:pointer; padding:5px; margin:5px; border-radius: 5px; margin-left:0px;'>TeaBag game official site | Play Now</button><br>lb123658.github.io</a>";
+quick.innerHTML = "<b>TeaBag - video game</b<br><p>TeaBag is a free online game that brings virtual tea to your computer. Brew virtual tea, buy new teapots, cups, and tea varieties, while collecting points and money to upgrade your supplies. Creating a TeaBag account is free.</p><br><br><a href='https://lb123658.github.io/tea' target='blank'>lb123658.github.io</a>";
+quick.style.visibility = "visible";
+} else if (text == "google") {
 first.innerHTML = "Google<br><a href='https://www.google.com' target='blank'>www.google.com</a>";
 quick.innerHTML = "<b>Google - technology company</b<br><p>Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.</p><br><br><a href='https://www.google.com' target='blank'>www.google.com</a>";
 quick.style.visibility = "visible";
