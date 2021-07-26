@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy settings</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+text-align: center;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+a {
+color: grey;
+text-decoration: none;
+font-size: 15px;
+}
+.container {
+margin-left: 5%;
+min-height: 100px;
+width: 85%;
+background: #3b4351;
+border-radius: 8px;
+padding: 20px;
+font-size: 17px;
+text-align: left;
+}
+.option {
+height: 30px;
+width: 100%;
+background: #2F3137;
+border: none;
+border-radius: 4px;
+color: grey;
+margin: 2px;
+}
+.option:hover {
+color: white;
+}
+</style>
+</head>
+<body>
+<h1>Settings</h1>
+<div class="container">
+  <p>Language: (not available yet)</p>
+  <button class="option" id="en">English</button>
+  <button class="option">Español</button>
+  <button class="option">Polski</button>
+  <button class="option">Русский</button>
+  <button class="option">Монгол</button>
+</div>
+
+<script src="menu.js"></script>
+<script>
+var en = document.getElementById("en");
+
+en.style.background = "#5765f2";
+en.style.color = "white";
+</script>
+</body>
+</html>
