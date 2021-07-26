@@ -193,6 +193,8 @@ quick.style.visibility = "visible";
 first.innerHTML = "Suriname - Wikipedia<br><a href='https://wikipedia.org/wiki/" + text + "' target='blank'>wikipedia.org</a>";
 quick.innerHTML = "<b>Suriname</b<br><p>Suriname or Surinam, officially known as the Republic of Suriname (Dutch: Republiek Suriname), is a country on the northeastern Atlantic coast of South America. It is bordered by the Atlantic Ocean to the north, French Guiana to the east, Guyana to the west, and Brazil to the south. At just under 165,000 square kilometers (64,000 square miles), it is the smallest sovereign state in South America. Suriname has a population of approximately 575,990, most of whom live on the country's north coast, in and around the capital and largest city, Paramaribo.</p><br><img src='https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname.svg' style='width:100%'>";
 quick.style.visibility = "visible";
+} else if (text.split(" ")[0] == "google") {
+first.innerHTML = text + " - official site<br><a href='https://" + text.split("google ")[1] + ".google.com' target='_blank'>" + text.split("google ")[1] + ".google.com</a>";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
 quick.style.visibility = "visible";
