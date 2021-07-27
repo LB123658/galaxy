@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warning: blocked search</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #181818;
+text-align: center;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+user-select: none;
+-webkit-user-select: none;
+}
+::selection {
+background: #5765f2;
+}
+p {
+color: grey;
+}
+#text {
+font-size: 18px;
+}
+.button {
+background: #5765f2;
+border: 3px solid #2F3137;
+padding: 8px;
+cursor: pointer;
+font-size: 18px;
+border-radius: 8px;
+}
+.button:hover {
+opacity: 0.7;
+}
+.button:focus {
+border: 3px solid white;
+}
+#back {
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: -1;
+height: 100%;
+width: 100%;
+background: #2F3137;
+animation-name: slide;
+animation-duration: 1.7s;
+}
+@keyframes slide {
+  0% {top: -100%}
+  100% {top: 0px}
+}
+</style>
+</head>
+<body>
+<br><br><br>
+<span class="material-icons" style="font-size:160px;
+color: #5765f2; cursor: default; user-select: none;">warning</span>
+<p style="font-size:60px;user-select:none;color:grey;">Warning!</p>
+<p id="text">You do not have JavaScript turned on</p>
+<button class="button" onclick="location.reload();">Reload</button>
+<button class="button" onclick="location.replace('https://lb123658.github.io/galaxy?source=blocked_page')">Continue</button>
+<div id="back"></div>
+<script>
+var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
+var text = document.getElementById("text");
+text.innerHTML = "You tried to search for \"" + query + "\" but Galaxy blocked it.";
+</script>
+</body>
+</html>
