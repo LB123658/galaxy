@@ -1,4 +1,4 @@
-// JUST FOR THE FIRST SUGGESTION
+// JUST FOR THE FIRST SUGGESTION AND QUICK ANSWER SECTION
 function setquickAnswer() {
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var first = document.getElementById("first");
@@ -7,27 +7,47 @@ var text = query.toLowerCase();
 
 if (query == "teabag") {
 first.innerHTML = "TeaBag - brewing virtual tea<br><a href='https://lb123658.github.io/tea' target='blank'><button style='background:grey; border:none; font-size:18px; cursor:pointer; padding:5px; margin:5px; border-radius: 5px; margin-left:0px;'>TeaBag game official site | Play Now</button><br>lb123658.github.io</a>";
-quick.innerHTML = "<b>TeaBag - video game</b<br><p>TeaBag is a free online game that brings virtual tea to your computer. Brew virtual tea, buy new teapots, cups, and tea varieties, while collecting points and money to upgrade your supplies. Creating a TeaBag account is free.</p><br><br><a href='https://lb123658.github.io/tea' target='blank'>lb123658.github.io</a>";
+quick.innerHTML = "<b>TeaBag - video game</b><br><p>TeaBag is a free online game that brings virtual tea to your computer. Brew virtual tea, buy new teapots, cups, and tea varieties, while collecting points and money to upgrade your supplies. Creating a TeaBag account is free.</p><br><a href='https://lb123658.github.io/tea' target='blank'>lb123658.github.io</a>";
 quick.style.visibility = "visible";
 } else if (text == "google") {
 first.innerHTML = "Google<br><a href='https://www.google.com' target='blank'>www.google.com</a>";
-quick.innerHTML = "<b>Google - technology company</b<br><p>Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.</p><br><br><a href='https://www.google.com' target='blank'>www.google.com</a>";
+quick.innerHTML = "<b>Google - technology company</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' style='width:100%;'><br><p>Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.</p><br><a href='https://www.google.com' target='blank'>www.google.com</a>";
+quick.style.visibility = "visible";
+} else if (text == "yahoo") {
+first.innerHTML = "Yahoo<br><a href='https://www.yahoo.com' target='blank'>www.yahoo.com</a>";
+quick.innerHTML = "<b>Yahoo - web portal</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Yahoo%21_%282019%29.svg' style='width:100%;'><br><p>Yahoo is an American web services provider. It is headquartered in Sunnyvale, California and is owned by Verizon Media, pending sale to investment funds managed by Apollo Global Management.It provides a web portal, search engine Yahoo Search, and related services, including My Yahoo!, Yahoo Mail, Yahoo News, Yahoo Finance, Yahoo Sports and its advertising platform, Verizon Media Native.</p><br><a href='https://www.yahoo.com' target='blank'>www.yahoo.com</a>";
+quick.style.visibility = "visible";
+} else if (text == "netflix") {
+first.innerHTML = "Netflix - Watch TV Shows Online, Watch Movies Online<br><a href='https://www.netflix.com' target='blank'>www.netflix.com</a>";
+quick.innerHTML = "<b>Netflix - streaming service</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg' style='width:100%;'><br><p>Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is a subscription-based streaming service offering online streaming from a library of films and television series, including those produced in-house. As of July 2021, Netflix had 209 million subscribers, including 72 million in the United States and Canada. It is available worldwide except in mainland China (due to local restrictions), Syria, North Korea, and Crimea (due to US sanctions). The company has offices in Canada, France, Brazil, the Netherlands, India, Japan, South Korea, and the United Kingdom. Netflix is a member of the Motion Picture Association (MPA), producing and distributing content from countries all over the globe.</p><br><a href='https://www.netflix.com' target='blank'>www.netflix.com</a>";
+quick.style.visibility = "visible";
+} else if (text == "discord") {
+first.innerHTML = "Discord | Your Place to Talk and Hang Out<br><a href='https://discord.com' target='blank'>discord.com</a>";
+quick.innerHTML = "<b>Discord - instant messaging</b><br><br><img src='https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg' style='width:100%;'><br><p>Discord is an instant messaging and digital distribution platform designed for creating communities. Users communicate with voice calls, video calls, text messaging, media and files in private chats or as part of communities called servers. Servers are a collection of persistent chat rooms and voice chat channels. Discord runs on Windows, macOS, Android, iOS, iPadOS, Linux, and in web browsers. As of December 2020, the service has over 250 million registered users and over 140 million monthly active users.</p><br><a href='https://discord.com' target='blank'>discord.com</a>";
+quick.style.visibility = "visible";
+} else if (text == "whatsapp") {
+first.innerHTML = "WhatsApp<br><a href='https://www.whatsapp.com' target='blank'>www.whatsapp.com</a>";
+quick.innerHTML = "<b>WhatsApp - messaging platform</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg' style='width:100%;'><br><p>WhatsApp Messenger, or simply WhatsApp, is an American freeware, cross-platform centralized messaging and voice-over-IP service owned by Facebook, Inc. It allows users to send text messages and voice messages, make voice and video calls, and share images, documents, user locations, and other content. WhatsApp's client application runs on mobile devices but is also accessible from desktop computers, as long as the user's mobile device remains connected to the Internet while they use the desktop app. The service requires a cellular mobile telephone number to sign up.</p><br><a href='https://www.whatsapp.com' target='blank'>www.whatsapp.com</a>";
+quick.style.visibility = "visible";
+} else if (text == "whatsapp web") {
+first.innerHTML = "WhatsApp<br><a href='https://www.whatsapp.com' target='blank'>www.whatsapp.com</a>";
+quick.innerHTML = "<b>WhatsApp - messaging platform</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg' style='width:100%;'><br><p>WhatsApp Messenger, or simply WhatsApp, is an American freeware, cross-platform centralized messaging and voice-over-IP service owned by Facebook, Inc. It allows users to send text messages and voice messages, make voice and video calls, and share images, documents, user locations, and other content. WhatsApp's client application runs on mobile devices but is also accessible from desktop computers, as long as the user's mobile device remains connected to the Internet while they use the desktop app. The service requires a cellular mobile telephone number to sign up.</p><br><a href='https://www.whatsapp.com' target='blank'>www.whatsapp.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "youtube") {
 first.innerHTML = "YouTube<br><a href='https://www.youtube.com' target='blank'>www.youtube.com</a>";
-quick.innerHTML = "<b>YouTube - video sharing company</b<br><p>YouTube is an American online video sharing and social media platform launched by Steve Chen, Chad Hurley, and Jawed Karim in February 2005. Its users watch more than one billion hours of videos each day.</p><br><br><a href='https://www.youtube.com' target='blank'>www.youtube.com</a>";
+quick.innerHTML = "<b>YouTube - video sharing company</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg' style='width:100%;'><br><p>YouTube is an American online video sharing and social media platform launched by Steve Chen, Chad Hurley, and Jawed Karim in February 2005. Its users watch more than one billion hours of videos each day.</p><br><a href='https://www.youtube.com' target='blank'>www.youtube.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "facebook") {
 first.innerHTML = "Facebook<br><a href='https://www.facebook.com' target='blank'>www.facebook.com</a>";
-quick.innerHTML = "<b>Facebook - social media</b<br><p>Facebook, Inc., is an American multinational conglomerate based in Menlo Park, California. It was founded by Mark Zuckerberg, along with his fellow roommates and students at Harvard College</p><br><br><a href='https://www.facebook.com' target='blank'>www.facebook.com</a>";
+quick.innerHTML = "<b>Facebook - social media</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Facebook_Logo_%282019%29.svg' style='width:100%;'><br><p>Facebook, Inc., is an American multinational conglomerate based in Menlo Park, California. It was founded by Mark Zuckerberg, along with his fellow roommates and students at Harvard College</p><br><a href='https://www.facebook.com' target='blank'>www.facebook.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "gmail") {
 first.innerHTML = "Gmail<br><a href='https://mail.google.com' target='blank'>mail.google.com</a>";
-quick.innerHTML = "<b>Gmail - email service</b<br><p>Gmail is a free email service provided by Google. As of 2019, it had 1.5 billion active users worldwide. A user typically accesses Gmail in a web browser or the official mobile app. Google also supports the use of email clients via the POP and IMAP protocols.</p><br><br><a href='https://mail.google.com' target='blank'>mail.google.com</a>";
+quick.innerHTML = "<b>Gmail - email service</b<br><br><img src='https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg' style='width:100%;'><br><p>Gmail is a free email service provided by Google. As of 2019, it had 1.5 billion active users worldwide. A user typically accesses Gmail in a web browser or the official mobile app. Google also supports the use of email clients via the POP and IMAP protocols.</p><br><a href='https://mail.google.com' target='blank'>mail.google.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "amazon") {
 first.innerHTML = "Amazon<br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
-quick.innerHTML = "<b>Amazon - online store</b<br><p>Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook. </p><br><br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
+quick.innerHTML = "<b>Amazon - online store</b<br><br><img src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' style='width:100%;'><br><p>Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook. </p><br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "olympics") {
 first.innerHTML = "2020 Tokyo Olympics<br><a href='https://olympics.com' target='blank'>olympics.com</a>";
