@@ -281,6 +281,10 @@ quick.style.visibility = "visible";
 first.innerHTML = text + " - official site<br><a href='https://" + text.split("bing ")[1] + ".bing.com' target='_blank'>" + text.split("bing ")[1] + ".bing.com</a>";
 quick.innerHTML = text + " - official site<br><br><a href='https://" + text.split("bing ")[1] + ".bing.com' target='_blank'>" + text.split("bing ")[1] + ".bing.com</a>";
 quick.style.visibility = "visible";
+} else if (text.split(" ")[0] == "yahoo") {
+first.innerHTML = text + " - official site<br><a href='https://" + text.split("yahoo ")[1] + ".yahoo.com' target='_blank'>" + text.split("yahoo ")[1] + ".yahoo.com</a>";
+quick.innerHTML = text + " - official site<br><br><a href='https://" + text.split("yahoo ")[1] + ".yahoo.com' target='_blank'>" + text.split("yahoo ")[1] + ".yahoo.com</a>";
+quick.style.visibility = "visible";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
 quick.style.visibility = "visible";
