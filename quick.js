@@ -1,4 +1,4 @@
-// JUST FOR THE FIRST SUGGESTION
+// JUST FOR THE FIRST SUGGESTION AND QUICK ANSWER SECTION
 function setquickAnswer() {
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var first = document.getElementById("first");
@@ -271,10 +271,16 @@ quick.innerHTML = "<b>Singapore</b<br><p>Singapore, officially the Republic of S
 quick.style.visibility = "visible";
 } else if (text.split(" ")[0] == "google") {
 first.innerHTML = text + " - official site<br><a href='https://" + text.split("google ")[1] + ".google.com' target='_blank'>" + text.split("google ")[1] + ".google.com</a>";
+quick.innerHTML = text + " - official site<br><br><a href='https://" + text.split("google ")[1] + ".google.com' target='_blank'>" + text.split("google ")[1] + ".google.com</a>";
+quick.style.visibility = "visible";
 } else if (text.split(" ")[0] == "yandex") {
 first.innerHTML = text + " - official site<br><a href='https://" + text.split("yandex ")[1] + ".yandex.com' target='_blank'>" + text.split("yandex ")[1] + ".yandex.com</a>";
+quick.innerHTML = text + " - official site<br><br><a href='https://" + text.split("yandex ")[1] + ".yandex.com' target='_blank'>" + text.split("yandex ")[1] + ".yandex.com</a>";
+quick.style.visibility = "visible";
 } else if (text.split(" ")[0] == "bing") {
 first.innerHTML = text + " - official site<br><a href='https://" + text.split("bing ")[1] + ".bing.com' target='_blank'>" + text.split("bing ")[1] + ".bing.com</a>";
+quick.innerHTML = text + " - official site<br><br><a href='https://" + text.split("bing ")[1] + ".bing.com' target='_blank'>" + text.split("bing ")[1] + ".bing.com</a>";
+quick.style.visibility = "visible";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
 quick.style.visibility = "visible";
