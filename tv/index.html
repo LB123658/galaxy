@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy TV</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.min.js"></script>
+<style>
+body {
+background: #2F3137;
+text-align: center;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+user-select: none;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+#img {
+position: fixed;
+top: 0px;
+left: 0px;
+min-width: 100%;
+min-height: 100%;
+pointer-events: none;
+z-index: -1;
+}
+h1 {
+font-size: 60px;
+}
+#input {
+background: #282828;
+font-size: 20px;
+height: 40px;
+width: 400px;
+border: none;
+border-radius: 8px;
+padding: 4px;
+border: 3px solid #2f3137;
+}
+#input:focus {
+border: 3px solid #5765f2;
+}
+#submit {
+background: #5765f2;
+font-size: 20px;
+height: 55px;
+border: none;
+border-radius: 8px;
+padding: 4px;
+border: 3px solid #2f3137;
+cursor: pointer;
+}
+#submit:focus {
+border: 3px solid #5765f2;
+}
+#vid {
+min-width: 700px;
+border-radius: 8px;
+border: 3px solid #2f3137;
+}
+#vid:focus {
+border: 3px solid #5765f2;
+}
+</style>
+<head>
+<body>
+<img src="" id="img">
+<h1 id="heading">Galaxy TV</h1>
+<p id="p">Watch millions of videos</p>
+<br><br>
+<input type="text" placeholder="Search by YouTube URL" id="input" autocomplete="off">
+<button id="submit" onclick="go()">Continue</button>
+<br><br>
+<div id="div">
+</div>
+<script>
+var input = document.getElementById("input");
+var div = document.getElementById("div");
+var heading = document.getElementById("heading");
+var p = document.getElementById("p");
+
+function go() {
+div.innerHTML = "<video data-yt2html5='" + input.value + "' autoplay controls poster='https://media1.tenor.com/images/9d1ce360e6b0f62e66cfc2ac0986ef5c/tenor.gif' id='vid'></video>";
+heading.remove();
+p.remove();
+new YouTubeToHtml5({
+    withAudio: true
+});
+}
+</script>
+</body>
+</html>
