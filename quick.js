@@ -294,6 +294,10 @@ location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
 location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
 } else if (text == "mail.ru") {
 location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "maga") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "trump hats") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
 } else {
 quick.style.visibility = "hidden";
 }
