@@ -284,6 +284,16 @@ quick.style.visibility = "visible";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
 quick.style.visibility = "visible";
+} else if (text == "dark web") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "illegal downloads") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "hacking") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "how to hack") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
+} else if (text == "mail.ru") {
+location.replace("https://lb123658.github.io/galaxy/blocked" + location.search);
 } else {
 quick.style.visibility = "hidden";
 }
