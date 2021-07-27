@@ -1,4 +1,4 @@
-// JUST FOR THE FIRST SUGGESTION AND QUICK ANSWER SECTION
+// JUST FOR THE FIRST SUGGESTION
 function setquickAnswer() {
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var first = document.getElementById("first");
@@ -47,7 +47,7 @@ quick.innerHTML = "<b>Gmail - email service</b<br><br><img src='https://upload.w
 quick.style.visibility = "visible";
 } else if (text == "amazon") {
 first.innerHTML = "Amazon<br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
-quick.innerHTML = "<b>Amazon - online store</b<br><br><img src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' style='width:100%;'><br><p>Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook. </p><br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
+quick.innerHTML = "<b>Amazon - online store</b><br><br><img src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' style='width:100%;'><br><p>Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook. </p><br><a href='https://www.amazon.com' target='blank'>www.amazon.com</a>";
 quick.style.visibility = "visible";
 } else if (text == "olympics") {
 first.innerHTML = "2020 Tokyo Olympics<br><a href='https://olympics.com' target='blank'>olympics.com</a>";
