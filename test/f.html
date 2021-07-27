@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="t">Galaxy search</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+.button {
+background: #5765f2;
+}
+#logo {
+position: absolute;
+top: 100px;
+left: 0px;
+width: 100%;
+text-align: center;
+font-size: 60px;
+user-select: none;
+}
+#container {
+position: absolute;
+top: 250px;
+left: 50%;
+width: 600px;
+margin-left: -300px;
+height: 50px;
+background: #3b4351;
+border-radius: 8px;
+}
+#search-icon {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+color: grey;
+}
+#input {
+position: absolute;
+top: 0px;
+left: 50px;
+width: 500px;
+height: 50px;
+background: transparent;
+border: none;
+font-size: 20px;
+}
+#search-submit {
+position: absolute;
+top: 0px;
+right: 0px;
+height: 50px;
+width: 50px;
+border-radius: 8px;
+border: none;
+background: transparent;
+cursor: pointer;
+}
+#search-submit:hover {
+background: #5765f2;
+}
+#search-submit:focus {
+background: grey;
+}
+a {
+color: grey;
+text-decoration: none;
+font-size: 15px;
+cursor: pointer;
+}
+#settings {
+position: absolute;
+top: 300px;
+left: 0px;
+width: 100%;
+text-align: center;
+}
+@media screen and (max-width: 650px) {
+  #container {
+    width: 100%;
+    margin-left: 0px;
+    left: 0px;
+  }
+  #input {
+    width: 70%;
+  }
+}
+</style>
+</head>
+<body>
+<p id="logo">Galaxy</p>
+
+<div id="container">
+  <button id="search-icon"><span class="material-icons" style="color:grey;">search</span></button>
+  <form action="search" id="form">
+    <input type="text" autocomplete="off" placeholder="Search privately" id="input" name="q">
+  </form>
+  <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
+</div>
+<p id="settings"><a onclick="set('english')">English</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="set('polish')">Polski</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="set('russian')">Русский</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="set('mongolian')">Монгол</a></p>
+<script>
+var input = document.getElementById("input");
+var t = document.getElementById("t");
+var logo = document.getElementById("logo");
+var form = document.getElementById("form");
+var lang = localStorage.getItem("galaxy_language");
+input.focus();
+
+if (lang == "spanish") {
+input.placeholder = "Buscar en privado";
+logo.innerHTML = "Galaxia";
+t.innerHTML = "Buscar con Galaxia";
+} else if (lang == "polish") {
+input.placeholder = "Szukaj";
+logo.innerHTML = "Galaktyka";
+t.innerHTML = "Szukać z Galaktyką";
+} else if (lang == "russian") {
+input.placeholder = "Поиск";
+logo.innerHTML = "Галактика";
+t.innerHTML = "Искать с Галактикой";
+} else if (lang == "mongolian") {
+input.placeholder = "Хайх";
+logo.innerHTML = "Галактик";
+t.innerHTML = "Хайн - Галактика";
+} else if (lang == "mongolian") {
+input.placeholder = "Хайх";
+logo.innerHTML = "Галактик";
+t.innerHTML = "Хайн - Галактика";
+}
+function set(language) {
+localStorage.setItem("galaxy_language", language);
+location.reload();
+}
+</script>
+</body>
+</html>
