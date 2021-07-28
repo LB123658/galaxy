@@ -1,4 +1,4 @@
-function div() {
+function makeMenu() {
 var container = document.createElement("div");
 container.style.position = "fixed";
 container.style.top = "0px";
@@ -82,4 +82,4 @@ shareLink.onclick = function() {shareLink.select();};
 shareClose.onclick = function() {sharing.style.visibility = "hidden"; document.body.style.pointerEvents = "auto"; shade.style.visibility = "hidden";};
 share.onclick = function() {document.body.style.pointerEvents = "none"; sharing.style.visibility = "visible"; sharing.style.pointerEvents = "auto"; sharing.style.opacity = "2"; shade.style.visibility = "visible";};
 }
-div();
+makeMenu();
