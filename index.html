@@ -178,9 +178,16 @@ background: #5765f2;
 <script>
 var input = document.getElementById("input");
 input.focus();
+
+if (location.search == "?source=blocked_page") {
+  displayNotification("Galaxy thought your last search wasn't safe so it blocked it.");
+} else if (location.search == "?source=new_user") {
+  displayNotification("Welcome to Galaxy!");
+}
 </script>
 <script src="menu.js"></script>
 <script src="info.js"></script>
 <script src="autofill.js"></script>
+<script src="notification.js"></script>
 </body>
 </html>
