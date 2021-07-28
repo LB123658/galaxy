@@ -1,14 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
 <title>Short links - Galaxy</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+text-align: center;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+padding: 5px;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+button {
+background: #5765f2;
+border: none;
+border-radius: 8px;
+height: 30px;
+}
+button:hover {
+cursor: pointer;
+}
+button:focus {
+background: grey;
+}
+input {
+width: 200px;
+background: transparent;
+border: 3px solid #5765f2;
+border-radius: 8px;
+}
+a {
+color: grey;
+text-decoration: none;
+font-size: 16px;
+}
+a:hover {
+color: #5765f2;
+}
+</style>
+</head>
 <body>
-Personal URL shortener. (Won't work if anyone else uses the link.)
-<br><br>
-Your link:
-<a id="a" href="#" target="_blank"></a>
-<br><br>
+<h1>Personal URL shortener</h1>
+<br>
+Your link:<a id="a" href="#" target="_blank"></a>
+<br><br><br>
 <input type="text" placeholder="URL you want to shorten" id="input">
 <button onclick="setUrl()">Shorten URL</button>
-
-</body>
 <script>
 var a = document.getElementById("a");
 var input = document.getElementById("input");
@@ -30,3 +78,5 @@ if (window.location.href == "https://lb123658.github.io/galaxy/url") {
 go();
 }
 </script>
+</body>
+</html>
