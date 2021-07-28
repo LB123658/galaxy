@@ -116,7 +116,6 @@ margin-left: -300px;
 background: #4b525e;
 border-radius: 0px 0px 8px 8px;
 visibility: hidden;
-z-index: 1;
 }
 #suggestion-div button {
 margin-top: 5px;
@@ -184,6 +183,7 @@ var input = document.getElementById("input");
 var conainer = document.getElementById("container");
 var div = document.getElementById("suggestion-div");
 
+div.style.visibility = "hidden";
 input.addEventListener("keyup", autofill);
 function autofill() {
 var query = input.value.replace(/ /g, "+");
