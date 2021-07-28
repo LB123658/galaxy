@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,6 +93,21 @@ color: grey;
 text-decoration: none;
 font-size: 15px;
 }
+#info {
+position: absolute;
+top: 305px;
+left: 0px;
+width: 100%;
+text-align: center;
+user-select: none;
+-webkit-user-select: none;
+color: grey;
+font-size: 15px;
+}
+#info a:hover {
+background: #3b4351;
+cursor: pointer;
+}
 @media screen and (max-width: 650px) {
   #container {
     width: 100%;
@@ -115,6 +131,9 @@ font-size: 15px;
   <button id="search-submit" type="submit" form="form"><span class="material-icons">search</span></button>
 </div>
 
+<!-- line of text -->
+<p id="info"></p>
+
 <p id="link-row">
   <a href="about">About Galaxy</a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -124,12 +143,9 @@ font-size: 15px;
 </p>
 <script>
 var input = document.getElementById("input");
-var container = document.getElementById("continer");
-var submit = document.getElementById("submit");
-
 input.focus();
-
 </script>
 <script src="menu.js"></script>
+<script src="info.js"></script>
 </body>
 </html>
