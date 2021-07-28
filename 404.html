@@ -6,17 +6,22 @@ Your link:
 <a id="a" href="#" target="_blank"></a>
 <br><br>
 <input type="text" placeholder="URL you want to shorten" id="input">
-<button onclick="setUrl()">Shorten URL
+<button onclick="setUrl()">Shorten URL</button>
+<br><br>
+<button onclick="go()">Go to website</button>
 </body>
 <script>
 var a = document.getElementById("a");
 var input = document.getElementById("input");
 a.innerHTML = "lb123658.github.io/galaxy/" + Math.random();
 a.href = "https://" + a.innerHTML;
+
+function go() {
 var website = localStorage.getItem(window.location.href);
 location.replace(website);
+}
 
 function setUrl() {
-localStorage.createItem(a.href, input.value);
+localStorage.setItem(a.href, input.value);
 }
 </script>
