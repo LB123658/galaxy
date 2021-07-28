@@ -1,14 +1,13 @@
 <title>Short links - Galaxy</title>
 <body>
-Personal URL shortener. (Copy the link before you shorten the URL so you can save it.  Will not work if anyone else uses the link.)
+Personal URL shortener. (Won't work if anyone else uses the link.)
 <br><br>
 Your link:
 <a id="a" href="#" target="_blank"></a>
 <br><br>
 <input type="text" placeholder="URL you want to shorten" id="input">
 <button onclick="setUrl()">Shorten URL</button>
-<br><br>
-<button onclick="go()">Go to website</button>
+
 </body>
 <script>
 var a = document.getElementById("a");
@@ -23,5 +22,11 @@ location.replace(website);
 
 function setUrl() {
 localStorage.setItem(a.href, input.value);
+alert("URL successfully shortened");
+}
+if (window.location.href == "https://lb123658.github.io/galaxy/url") {
+;
+} else {
+go();
 }
 </script>
