@@ -84,7 +84,7 @@ var firstWord = input.value.split(" ")[0].toLowerCase();
   } else if (firstLetter == "s") {
     container.style.borderRadius = "8px 8px 0px 0px";
     div.style.visibility = "visible";
-    div.innerHTML = "<a href='https://lb123658.github.io/galaxy/search?q=" + query + "'><button>" + input.value + "</button></a><a href='https://lb123658.github.io/galaxy/search?q=Sweden'><button>Sweden</button></a><a href='https://lb123658.github.io/galaxy/search?q=Sweden'><button>Switzerland</button></a><a href='https://lb123658.github.io/galaxy/search?q=Somalia'><button>Somalia</button></a><a href='https://lb123658.github.io/galaxy/search?q=South+Korea'><button>South Korea</button></a>";
+    div.innerHTML = "<a href='https://lb123658.github.io/galaxy/search?q=" + query + "'><button>" + input.value + "</button></a><a href='https://lb123658.github.io/galaxy/search?q=Sweden'><button>Sweden</button></a><a href='https://lb123658.github.io/galaxy/search?q=Switzerland'><button>Switzerland</button></a><a href='https://lb123658.github.io/galaxy/search?q=Somalia'><button>Somalia</button></a><a href='https://lb123658.github.io/galaxy/search?q=South+Korea'><button>South Korea</button></a>";
   } else if (firstLetter == "t") {
     container.style.borderRadius = "8px 8px 0px 0px";
     div.style.visibility = "visible";
