@@ -21,9 +21,6 @@ background: #5765f2;
 :focus {
 outline-width: 0px;
 }
-.button {
-background: #5765f2;
-}
 a {
 color: grey;
 text-decoration: none;
@@ -99,11 +96,19 @@ cursor: pointer;
 #page-container button:focus {
 background: #3b4351;
 }
+#main {
+position: absolute;
+top: 70px;
+left: 240px;
+width: 60%;
+border-radius: 8px;
+background: #3b4351;
+}
 </style>
 </head>
 <body>
 <div id="left">
-<button id="logo">Galaxy Store</button>
+<button id="logo" onclick="location.reload()">Galaxy Store</button>
 <input type="text" placeholder="Search" id="input" autocomplete="off">
 <span class="material-icons" id="icon">search</span>
   <div id="page-container">
@@ -114,11 +119,25 @@ background: #3b4351;
   </div>
 </div>
 
+<div id="main"></div>
+
 <script>
 var input = document.getElementById("input");
 var icon = document.getElementById("icon");
+var main = document.getElementById("main");
 
-icon.onclick = function() { input.focus(); };
+document.body.onload = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
+document.body.onresize = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
+
+// load content
+function loadContent(text) {
+main.innerHTML = "<p style='width:100%;text-align:center;margin-top:50px;color:grey;'><button class='animate' id='one'></button><button class='animate' id='two'></button><button class='animate' id='three'></button><br><br>" + text + "</p>";
+var contentcss = document.createElement("style");
+contentcss.innerHTML = ".animate { width: 25px; height: 25px; border-radius: 50%; border: none; background: #5765f2; margin: 5px; opacity: 0; } #one { animation: moveone 4s infinite; } #two { animation: movetwo 4s infinite; } #three { animation: movethree 4s infinite; } @keyframes moveone { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} } @keyframes movetwo { 0% {opacity: 0;} 75% {opacity: 1;} 100% {opacity: 0;} } @keyframes movethree { 0% {opacity: 0;} 100% {opacity: 1;} }";
+document.head.appendChild(contentcss);
+}
+loadContent("Loading...");
+
 setInterval(deleteSearch, 100);
 
 function deleteSearch() {
@@ -130,6 +149,14 @@ icon.innerHTML = "search";
 icon.onclick = function() {input.focus();};
 }
 }
+
+setInterval(checkOnline, 100);
+function checkOnline() {
+if (navigator.onLine = false) {
+loadContent("You are offline right now...");
+}
+}
+
 </script>
 <script src="https://lb123658.github.io/galaxy/menu.js"></script>
 <script src="https://lb123658.github.io/galaxy/loading.js"></script>
