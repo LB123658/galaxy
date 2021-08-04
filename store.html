@@ -152,13 +152,15 @@ icon.onclick = function() {input.focus();};
 
 setInterval(checkOnline, 100);
 function checkOnline() {
-if (navigator.onLine = false) {
+if (navigator.onLine == false) {
 loadContent("You are offline right now...");
+} else {
+console.log("You are online");
 }
 }
 
 </script>
 <script src="https://lb123658.github.io/galaxy/menu.js"></script>
-<script src="https://lb123658.github.io/galaxy/loading.js"></script>
+<script src="https://lb123658.github.io/galaxy/loading.j s"></script>
 </body>
 </html>
