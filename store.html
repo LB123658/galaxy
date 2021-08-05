@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,27 +105,75 @@ width: 60%;
 border-radius: 8px;
 background: #3b4351;
 }
+.blur {
+filter: blur(2px);
+}
+.off {
+pointer-events: none;
+opacity: 0.6;
+}
+#auto {
+position: fixed;
+top: 110px;
+left: 50px;
+width: 200px;
+border-radius: 8px;
+border: none;
+padding: 5px;
+background: #3b4351;
+z-index: 2;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+visibility: hidden;
+}
+#autoButton {
+width: 100%;
+min-height: 25px;
+background: transparent;
+color: grey;
+border: none;
+border-radius: 8px;
+text-align: left;
+padding: 5px;
+}
+#autoButton:hover {
+cursor: pointer;
+background: #5765f2;
+color: white;
+}
 </style>
 </head>
 <body>
 <div id="left">
 <button id="logo" onclick="location.reload()">Galaxy Store</button>
-<input type="text" placeholder="Search" id="input" autocomplete="off">
+<form action="search" id="form">
+  <input type="text" placeholder="Search" id="input" autocomplete="off" name="q" onkeyup="autoSuggest()">
+</form>
 <span class="material-icons" id="icon">search</span>
   <div id="page-container">
-    <button>All apps</button>
-    <button>Galaxy apps</button>
-    <button>Search</button>
-    <button>About</button>
+    <button class="off">All apps</button>
+    <button class="off">Galaxy apps</button>
+    <button style="width:100%;height:1px;background:#3b4351;border:none;margin-bottom:10px;"></button>
+    <a href="https://lb123658.github.io/galaxy">
+      <button>Galaxy Search</button>
+    </a>
+    <a href="about">
+      <button>About</button>
+    </a>
   </div>
 </div>
 
 <div id="main"></div>
 
+<div id="auto">
+  <button id="autoButton" type="submit" form="form">Click here</button>
+</div>
+
 <script>
 var input = document.getElementById("input");
 var icon = document.getElementById("icon");
 var main = document.getElementById("main");
+var auto = document.getElementById("auto");
+var autoButton = document.getElementById("autoButton");
 
 document.body.onload = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
 document.body.onresize = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
@@ -143,7 +192,7 @@ setInterval(deleteSearch, 100);
 function deleteSearch() {
 if (input.value.length > 0) {
 icon.innerHTML = "close";
-icon.onclick = function() {input.value = "";};
+icon.onclick = function() {input.value = ""; auto.style.visibility = "hidden"; autoButton.innerHTML = "";};
 } else if (input.value.length < 1) {
 icon.innerHTML = "search";
 icon.onclick = function() {input.focus();};
@@ -159,8 +208,21 @@ console.log("You are online");
 }
 }
 
+function autoSuggest() {
+if (input.value.length > 0) {
+auto.style.visibility = "visible";
+autoButton.innerHTML = input.value;
+} else if (input.value.length < 1) {
+auto.style.visibility = "hidden";
+autoButton.innerHTML = "";
+} 
+if (input.value == " ") {
+auto.style.visibility = "hidden";
+autoButton.innerHTML = "";
+}
+}
 </script>
 <script src="https://lb123658.github.io/galaxy/menu.js"></script>
-<script src="https://lb123658.github.io/galaxy/loading.j s"></script>
+<script src="https://lb123658.github.io/galaxy/loading.js"></script>
 </body>
 </html>
