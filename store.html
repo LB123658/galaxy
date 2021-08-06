@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,11 +139,26 @@ cursor: pointer;
 background: #5765f2;
 color: white;
 }
+.app-div {
+background: #3b4351;
+border-radius: 8px;
+margin-bottom: 10px;
+padding: 20px;
+}
+.app-div button {
+height: 30px;
+border-radius: 15px;
+background: #5765f2;
+border: none;
+cursor: pointer;
+padding-left: 10px;
+padding-right: 10px;
+}
 </style>
 </head>
 <body>
 <div id="left">
-<button id="logo" onclick="location.reload()">Galaxy Store</button>
+<button id="logo" onclick="location.replace('https://lb123658.github.io/galaxy/store?source=reload')">Galaxy Store</button>
 <form action="search" id="form">
   <input type="text" placeholder="Search" id="input" autocomplete="off" name="q" onkeyup="autoSuggest()">
 </form>
@@ -153,10 +167,10 @@ color: white;
     <button class="off">All apps</button>
     <button class="off">Galaxy apps</button>
     <button style="width:100%;height:1px;background:#3b4351;border:none;margin-bottom:10px;"></button>
-    <a href="https://lb123658.github.io/galaxy">
+    <a href="https://lb123658.github.io/galaxy" target="_blank">
       <button>Galaxy Search</button>
     </a>
-    <a href="about">
+    <a href="https://lb123658.github.io/galaxy/about" target="_blank">
       <button>About</button>
     </a>
   </div>
@@ -177,6 +191,20 @@ var autoButton = document.getElementById("autoButton");
 
 document.body.onload = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
 document.body.onresize = function() {var wide = window.innerWidth - 280; main.style.width = wide + "px";};
+
+//loading js section
+if (location.search == "?source=reload") {
+console.log("Returning visitor");
+} else if (window.location.search == "?filename=tryjs_setinterval2") {
+console.log("Editing HTML");
+} else {
+createLoadingjs();
+} 
+function createLoadingJs() {
+var loadingJavascript = document.createElement("script");
+loadingJavascript.src = "https://lb123658.github.io/galaxy/loading.js";
+document.body.appendChild(loadingJavascript);
+}
 
 // load content
 function loadContent(text) {
@@ -221,8 +249,33 @@ auto.style.visibility = "hidden";
 autoButton.innerHTML = "";
 }
 }
+
+setTimeout(loadApps, 2000);
+function loadApps() {
+main.innerHTML = "";
+show("Galaxy Search","Search privately with Galaxy, the search engine that never tracks you.","https://lb123658.github.io/galaxy?source=new_user");
+show("Galaxy TV","Watch millions of videos of videos from YouTube without any trackers.","https://lb123658.github.io/galaxy/tv");
+show("TeaBag","Brew virtual tea online, get money, and upgrade to better teapots, teabags, and tea varieties.","https://lb123658.github.io/tea");
+show("Photon Games","Play video games all from one place.","https://lb123658.github.io/");
+show("Docs","Edit and save documents online.","https://lb123658.github.io/docs");
+show("Unkrafted","A singleplayer video game where you collect building materials and avoid falling bombs.","https://lb123658.github.io/unkrafted");
+show("The Ultimate Goat Simulator","A goat that runs and jumps over logs. Available in English, Polish, and Spanish.","https://lb123658.github.io/goat/about");
+show("Survival","Land on an island and try to survive.","https://lb123658.github.io/Survival");
+show("Milo, the virtual assistant","A virtual assistant that can answer most questions.","https://lb123658.github.io/milo");
+show("Vintage Docs","Write and edit documents with a vintage computer look.","https://lb123658.github.io/docs/old");
+show("Dark Mode","Turn dark mode on for any website or add automatic dark and light modes to your own website.","https://lb123658.github.io/dark.mode");
+show("Boost HTML Editor","Edit HTML easily online with features to preview the code or download it.","https://lb123658.github.io/Boost-HTML-Editor");
+}
+
+function show(title,content,link) {
+var appDiv = document.createElement("div");
+appDiv.innerHTML = "<h3>" + title + "</h3><p>" + content + "</p><a href='" + link + "' target='_blank'><button class='appLink'>OPEN</button></a>";
+appDiv.className = "app-div";
+main.style.background = "transparent";
+main.appendChild(appDiv);
+}
+
 </script>
 <script src="https://lb123658.github.io/galaxy/menu.js"></script>
-<script src="https://lb123658.github.io/galaxy/loading.js"></script>
 </body>
 </html>
