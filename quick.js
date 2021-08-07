@@ -1,9 +1,20 @@
 // JUST FOR THE FIRST SUGGESTION AND QUICK ANSWER SECTION
+
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function showPosition(position) {
+quick.innerHTML = "<b>Galaxy found " + text.split(" near me")[0] + " near you.</b><br>See all locations in maps.<br><br><img src='https://upload.wikimedia.org/wikipedia/commons/d/dc/Google_Maps_Logo.svg' style='width:100%; border-radius:8px;'><br><a href='https://www.google.com/maps/search/" + text.split(" near me")[0] + "/@" + position.coords.latitude + "," + position.coords.longitude + "' target='_blank'>maps.google.com</a>";
+first.innerHTML = text.split(" near me")[0] + " near you - Google Maps<br><a href='https://www.google.com/maps/search/" + text.split(" near me")[0] + "/@" + position.coords.latitude + "," + position.coords.longitude + "' target='_blank'>maps.google.com</a>";
+}
+
 function setquickAnswer() {
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var first = document.getElementById("first");
 var quick = document.getElementById("quick");
 var text = query.toLowerCase();
+
 
 if (query == "teabag") {
 first.innerHTML = "TeaBag - brewing virtual tea<br><a href='https://lb123658.github.io/tea' target='blank'><button style='background:grey; border:none; font-size:18px; cursor:pointer; padding:5px; margin:5px; border-radius: 5px; margin-left:0px;'>TeaBag game official site | Play Now</button><br>lb123658.github.io</a>";
@@ -287,6 +298,9 @@ quick.innerHTML = text + " - official site<br><br><a href='https://" + text.spli
 quick.style.visibility = "visible";
 } else if (query.length > 18) {
 quick.innerHTML = "<b>" + query + "</b><br><p>Galaxy is working to have better results and quick answers available for popular topics. This is currently not available for your search.</p>";
+quick.style.visibility = "visible";
+} else if (text.search("near me") > -1) {
+getLocation();
 quick.style.visibility = "visible";
 } else {
 quick.style.visibility = "hidden";
