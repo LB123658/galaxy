@@ -13,6 +13,6 @@ if (location.search == "?source=blocked_page") {
   displayNotification("Galaxy thought your last search wasn't safe so it blocked it.");
 } else if (location.search == "?source=new_user") {
   displayNotification("Welcome to Galaxy!");
-} else if (location.search.length > 20) {
+} else if (location.search.split("?q=")[1].length > 30) {
   displayNotification("That was a long search.<br>Galaxy may not have found the best results.");
 }
