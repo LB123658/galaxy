@@ -81,6 +81,7 @@ function clearHistory() {
 const d = new Date();
 var clearedButton = "null<button class='history'>Search history cleared... <span style='float:right;'>" + d.toLocaleTimeString() + "</span></button>";
 localStorage.setItem("search_history",clearedButton);
+location.reload();
 }
 </script>
 <script src="menu.js"></script>
