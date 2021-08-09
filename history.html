@@ -13,6 +13,8 @@ background: #2F3137;
 * {
 font-family: 'Montserrat', sans-serif;
 color: white;
+user-select: none;
+-webkit-user-select: none;
 }
 ::selection {
 background: #5765f2;
@@ -20,10 +22,6 @@ background: #5765f2;
 :focus {
 outline-width: 0px;
 }
-.button {
-background: #5765f2;
-}
-
 .history {
 min-height: 30px;
 margin-bottom: 10px;
@@ -39,21 +37,52 @@ color: white;
 .history:hover {
 opacity: 0.8;
 }
+.small {
+color: grey;
+font-size: 15px;
+}
+#top {
+background: #2F3137;
+position: -webkit-sticky;
+position: sticky;
+top: 0px;
+padding: 10px;
+z-index: 2;
+}
+#clear {
+float:right;
+background: #5765f2;
+border: none;
+border-radius: 8px;
+padding: 5px;
+cursor: pointer;
+opacity: 0.7;
+transition: transform 0.5s;
+}
+#clear:hover {
+opacity: 1;
+transform: scale(1.2);
+}
 </style>
 <body>
-
+<div id="top">
 <h2>Galaxy History</h2>
-
-
-<p id="demo"></p>
+<button id="clear" onclick="clearHistory()">Clear history</button>
+<p class="small">Your search history is only stored in your browser and is not available to anyone else.</p>
+</div>
+<div id="links"></div>
 
 <script>
-var demo = document.getElementById("demo");
-const d = new Date();
+var links = document.getElementById("links");
 var searchHistory = localStorage.getItem("search_history");
-demo.innerHTML = searchHistory.split("null")[1];
+links.innerHTML = searchHistory.split("null")[1];
 
+function clearHistory() {
+const d = new Date();
+var clearedButton = "null<button class='history'>Search history cleared... <span style='float:right;'>" + d.toLocaleTimeString() + "</span></button>";
+localStorage.setItem("search_history",clearedButton);
+}
 </script>
-
+<script src="menu.js"></script>
 </body>
 </html>
