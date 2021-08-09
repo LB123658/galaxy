@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="t">Galaxy history</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+background: #2F3137;
+}
+* {
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+}
+.button {
+background: #5765f2;
+}
+
+.history {
+min-height: 30px;
+margin-bottom: 10px;
+width: 100%;
+border-radius: 8px;
+font-size: 16px;
+text-align: left;
+cursor: pointer;
+border: none;
+background: #3b4351;
+color: white;
+}
+.history:hover {
+opacity: 0.8;
+}
+</style>
+<body>
+
+<h2>Galaxy History</h2>
+
+
+<p id="demo"></p>
+
+<script>
+var demo = document.getElementById("demo");
+const d = new Date();
+var searchHistory = localStorage.getItem("search_history");
+demo.innerHTML = searchHistory.split("null")[1];
+
+</script>
+
+</body>
+</html>
