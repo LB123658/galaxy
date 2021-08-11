@@ -69,6 +69,14 @@ color: #5765f2;
 font-size: 40px;
 text-decoration: none;
 }
+#loader {
+position: absolute;
+top: -50px;
+font-size: 40px;
+background: white;
+border: none;
+width: 100%;
+}
 </style>
 </head>
 <body>
@@ -126,7 +134,7 @@ text-decoration: none;
 <br><br>
 <br><br>
 </div>
-
+<button id="loader"></button>
 <script>
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var input = document.getElementById("input");
