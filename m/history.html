@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy search history</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/m/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+* {
+font-family: 'Montserrat', sans-serif;
+color: black;
+-webkit-user-select: none;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+outline: none;
+}
+input {
+-webkit-user-select: auto;
+margin-top: 50px;
+width: 90%;
+text-align: left;
+font-size: 50px;
+border: 3px solid #3b4351;
+border-radius: 8px;
+padding: 20px;
+}
+input::selection {
+background: grey;
+}
+input:focus {
+background: white;
+border: 3px solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+body {
+text-align: center;
+overflow-x: hidden;
+}
+#results {
+width: 100%;
+text-align: left;
+}
+#results button {
+width: 100%;
+color: black;
+font-size: 40px;
+border: none;
+border-radius: 8px;
+text-align: left;
+margin-top: 20px;
+background: white;
+transition: transform 0.5s;
+}
+#results button:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+transform: scale(0.9);
+}
+#results button:focus {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+a {
+color: #5765f2;
+font-size: 40px;
+text-decoration: none;
+}
+#loader {
+position: absolute;
+top: -50px;
+font-size: 40px;
+background: white;
+border: none;
+width: 100%;
+color:
+}
+h1 {
+font-size: 80px;
+text-align: left;
+}
+</style>
+</head>
+<body>
+<h1>Search history</h1>
+<div id="results">
+<span id="h"></span>
+<br><br><br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</div>
+<button id="loader"></button>
+<script>
+document.getElementById("h").innerHTML = localStorage.getItem("search_history").split("null")[1];
+</script>
+<script src="https://lb123658.github.io/galaxy/m/icon-bar.js"></script>
+</body>
+</html>
