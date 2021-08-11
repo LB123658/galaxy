@@ -5,7 +5,7 @@ css.innerHTML = iconbarStyle;
 document.head.appendChild(css);
 var bottomiconRow = document.createElement("div");
 bottomiconRow.id = "bottom-icon-row";
-bottomiconRow.innerHTML = "<button id='home'><span class='material-icons' style='color:black;font-size:40px;'>home</span></button> <button id='bookmark'><span class='material-icons' style='color:black;font-size:40px;'>bookmark</span></button> <button id='history'><span class='material-icons' style='color:black;font-size:40px;'>history</span></button>";
+bottomiconRow.innerHTML = "<button id='home'><span class='material-icons' style='color:black;font-size:40px;'>home</span></button> <button id='history'><span class='material-icons' style='color:black;font-size:40px;'>history</span></button> <button id='more'><span class='material-icons' style='color:black;font-size:40px;'>more_vert</span></button>";
 document.body.appendChild(bottomiconRow);
 }
 iconBar();
