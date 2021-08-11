@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy search</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/m/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+* {
+font-family: 'Montserrat', sans-serif;
+color: black;
+-webkit-user-select: none;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+outline: none;
+}
+input {
+-webkit-user-select: auto;
+margin-top: 50px;
+width: 90%;
+text-align: left;
+font-size: 50px;
+border: 3px solid #3b4351;
+border-radius: 8px;
+padding: 20px;
+}
+input::selection {
+background: grey;
+}
+input:focus {
+background: white;
+border: 3px solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+body {
+text-align: center;
+overflow-x: hidden;
+}
+#results {
+width: 100%;
+text-align: left;
+}
+#results button {
+width: 100%;
+color: black;
+font-size: 40px;
+border: none;
+border-radius: 8px;
+text-align: left;
+margin-top: 20px;
+background: white;
+transition: transform 0.5s;
+}
+#results button:hover {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+transform: scale(0.9);
+}
+#results button:focus {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+a {
+color: #5765f2;
+font-size: 40px;
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+<form action="search">
+<input type="text" name="q" autocomplete="off" placeholder="Search" id="input">
+</form>
+<div id="results">
+<button id="first"></button>
+<br><br>
+<button id="wikipedia"></button>
+<br><br>
+<button id="youtube"></button>
+<br><br>
+<button id="amazon"></button>
+<br><br>
+<button id="pinterest"></button>
+<br><br>
+<button id="ebay"></button>
+<br><br>
+<button id="reddit"></button>
+<br><br>
+<button id="instagram"></button>
+<br><br>
+<button id="google"></button>
+<br><br>
+<button id="twitter"></button>
+<br><br>
+<button id="duckduckgo"></button>
+<br><br>
+<button id="ecosia"></button>
+<br><br>
+<button id="yandex"></button>
+<br><br>
+<button id="yahoonews"></button>
+<br><br>
+<button id="cnn"></button>
+<br><br>
+<button id="nytimes"></button>
+<br><br>
+<button id="spotify"></button>
+<br><br>
+<button id="soundcloud"></button>
+<br><br>
+<button id="wikihow"></button>
+<br><br>
+<button id="github"></button>
+<br><br>
+<button id="stackoverflow"></button>
+<br><br><br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</div>
+
+<script>
+var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
+var input = document.getElementById("input");
+
+//result links
+var first = document.getElementById("first");
+var wikipedia = document.getElementById("wikipedia");
+var youtube = document.getElementById("youtube");
+var amazon = document.getElementById("amazon");
+var pinterest = document.getElementById("pinterest");
+var ebay = document.getElementById("ebay");
+var reddit = document.getElementById("reddit");
+var instagram = document.getElementById("instagram");
+var google = document.getElementById("google");
+var twitter = document.getElementById("twitter");
+var duckduckgo = document.getElementById("duckduckgo");
+var ecosia = document.getElementById("ecosia");
+var yandex = document.getElementById("yandex");
+var yahoonews = document.getElementById("yahoonews");
+var cnn = document.getElementById("cnn");
+var nytimes = document.getElementById("nytimes");
+var spotify = document.getElementById("spotify");
+var soundcloud = document.getElementById("soundcloud");
+var wikihow = document.getElementById("wikihow");
+var github = document.getElementById("github");
+var stackoverflow = document.getElementById("stackoverflow");
+
+//LOAD SEARCH RESULTS -----------------------------------------------
+function loadwebResults() {
+input.value = query;
+
+first.innerHTML = "Galaxy is still being made so these results may not be the most helpful at first.";
+
+//wikipedia link
+wikipedia.innerHTML = query + " - Wikipedia<br><a href='https://wikipedia.org/wiki/Special:Search?search=" + query + "' target='blank'>en.wikipedia.org</a>";
+
+//youtube link
+youtube.innerHTML = query + " - YouTube<br><a href='https://www.youtube.com/results?search_query=" + query + "' target='blank'>www.youtube.com</a>";
+
+//amazon link
+amazon.innerHTML = "Amazon.com : " + query + "<br><a href='https://www.amazon.com/s?k=" + query + "' target='blank'>www.amazon.com</a>";
+
+//pinterest link
+pinterest.innerHTML = query + " - Pinterest<br><a href='https://www.pinterest.com/search/pins/?q=" + query + "' target='blank'>www.pinterest.com</a>";
+
+//ebay link
+ebay.innerHTML = query + " | eBay<br><a href='https://www.ebay.com/sch/i.html?_nkw=" + query + "' target='blank'>www.ebay.com</a>";
+
+//reddit link
+reddit.innerHTML = "reddit.com: search results - " + query + "<br><a href='https://www.reddit.com/search/?q=" + query + "' target='blank'>www.reddit.com</a>";
+
+//instagram link
+instagram.innerHTML = query + " on Instagram • Photos and Videos<br><a href='https://www.instagram.com/explore/tags/" + query + "' target='blank'>www.instagram.com</a>";
+
+//google link
+google.innerHTML = query + " - Google Search<br><a href='https://www.google.com/search?q=" + query + "' target='blank'>www.google.com</a>";
+
+//twitter link
+twitter.innerHTML = query + " - Twitter Search / Twitter<br><a href='https://twitter.com/search?q=" + query + "' target='blank'>twitter.com</a>";
+
+//duckduckgo link
+duckduckgo.innerHTML = query + " at DuckDuckGo<br><a href='https://duckduckgo.com/?q=" + query + "' target='blank'>duckduckgo.com</a>";
+
+//ecosia link
+ecosia.innerHTML = query + " - Ecosia<br><a href='https://www.ecosia.org/search?q=" + query + "' target='blank'>www.ecosia.org</a>";
+
+//yandex link
+yandex.innerHTML = query + " - Yandex<br><a href='https://yandex.com/search/?text=" + query + "' target='blank'>yandex.com</a>";
+
+//yahoonews link
+yahoonews.innerHTML = query + " - Yahoo Search Results<br><a href='https://news.search.yahoo.com/search?p=" + query + "' target='blank'>news.search.yahoo.com</a>";
+
+//cnn link
+cnn.innerHTML = query + " - CNN.com<br><a href='https://www.cnn.com/search?q=" + query + "' target='blank'>www.cnn.com</a>";
+
+//nytimes link
+nytimes.innerHTML = query + " - The New York Times<br><a href='https://www.nytimes.com/search?query=" + query + "' target='blank'>www.nytimes.com</a>";
+
+//spotify link
+spotify.innerHTML = query + " - Spotify Web Player<br><a href='https://open.spotify.com/search/" + query + "' target='blank'>open.spotify.com</a>";
+
+//soundcloud link
+soundcloud.innerHTML = query + " - Soundcloud<br><a href='https://soundcloud.com/search?q=" + query + "' target='blank'>soundcloud.com</a>";
+
+//wikihow link
+wikihow.innerHTML = "Search for '" + query + "' - wikihow<br><a href='https://www.wikihow.com/wikiHowTo?search=" + query + "' target='blank'>www.wikihow.com</a>";
+
+//github link
+github.innerHTML = query + " - GitHub<br><a href='https://github.com/search?q=" + query + "' target='blank'>github.com</a>";
+
+//stackoverflow link
+stackoverflow.innerHTML = "Posts containing '" + query + "' - Stack Overflow<br><a href='https://stackoverflow.com/search?q=" + query + "' target='blank'>stackoverflow.com</a>";
+
+
+//set first result to a website if website is searched
+if (query.split(".")[1].length > 1) {
+first.innerHTML = query + " - website<br><a href='https://" + query + "' target='_blank'>" + query + "</a>";
+}
+}
+loadwebResults();
+
+</script>
+<script src="https://lb123658.github.io/galaxy/m/icon-bar.js"></script>
+</body>
+</html>
