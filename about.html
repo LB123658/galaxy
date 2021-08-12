@@ -13,30 +13,136 @@ background: #2F3137;
 * {
 font-family: 'Montserrat', sans-serif;
 color: white;
+user-select: none;
 }
 ::selection {
 background: #5765f2;
-}
-.text {
-font-size: 23px;
-line-height: 1.5;
-width: 65%;
-min-width: 500px;
-text-align: justify;
-margin-left: 10px;
 }
 a {
 color: grey;
 text-decoration: none;
 font-size: 15px;
 }
+#top {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 80px;
+background: #3b4351;
+overflow: hidden;
+z-index: 1;
+}
+#top p {
+font-size: 30px;
+margin: 20px;
+}
+button {
+height: 40px;
+font-size: 20px;
+border-radius: 8px;
+margin-top: 20px;
+margin-left: 10px;
+border: 0px;
+background: #2F3137;
+transition: transform 0.5s, background 0.5s;
+padding-left: 20px;
+padding-right: 20px;
+}
+button:hover {
+background: #5765f2;
+cursor: pointer;
+transform: scale(1.1);
+}
+#top * {
+float: left;
+}
+#content {
+position: absolute;
+top: 100px;
+left: 10%;
+width: 80%;
+text-align: center;
+}
+#laptop {
+position: absolute;
+top: 180px;
+left: 50%;
+width: 600px;
+margin-left: -300px;
+}
+#vid {
+position: absolute;
+top: 197px;
+left: 50%;
+width: 430px;
+margin-left: -215px;
+}
+#more {
+position: absolute;
+top: 600px;
+left: 0px;
+width: 100%;
+}
+html {
+scroll-behavior: smooth;
+}
 </style>
 </head>
 <body>
-<h1>About Galaxy</h1>
-<p>Last updated: July 22, 2021</p>
-<br>
-<p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Galaxy Search is a search engine that never tracks you but still has good results. More specialized searches for specific topics will be coming soon including music, video, image searches. Currently Galaxy is only available in English but more languages will be added, including Spanish, Russian, Polish, and more.</p>
-<script src="menu.js"></script>
+<div id="top">
+<p style="cursor:pointer;" onclick="location.reload();">Galaxy</p>
+<a href="#search">
+<button>Search</button></a>
+<a href="#more">
+<button>Privacy</button></a>
+<a href="https://lb123658.github.io/galaxy/extension/extension.zip">
+<button><span class="material-icons">download</span> Extension</button></a>
+<a href="https://github.com/lb123658/galaxy" target="_blank">
+<button style="float:right;">Source code</button></a>
+</div>
+<div id="content">
+<h1>Welcome to Galaxy</h1>
+<p>No tracking. Useful results.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 70.51" style="enable-background:new 0 0 122.88 70.51" xml:space="preserve" id="laptop"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M2.54,65.44h12.59c-0.93-0.24-1.63-1.1-1.63-2.1V2.17C13.5,0.98,14.48,0,15.67,0h90.97 c1.19,0,2.17,0.98,2.17,2.17v61.16c0,1.01-0.69,1.86-1.63,2.1h13.16c1.4,0,2.54,1.14,2.54,2.54v0c0,1.4-1.14,2.54-2.54,2.54H2.54 c-1.4,0-2.54-1.14-2.54-2.54v0C0,66.58,1.14,65.44,2.54,65.44L2.54,65.44z M17.21,3.4h88.19v59.32H17.21V3.4L17.21,3.4z M57.87,66.39h7.14c0.67,0,1.22,0.55,1.22,1.22l0,0c0,0.67-0.55,1.22-1.22,1.22h-7.14c-0.67,0-1.22-0.55-1.22-1.22l0,0 C56.65,66.93,57.2,66.39,57.87,66.39L57.87,66.39z" fill="white"/></g></svg>
+<video id="vid" loop autoplay>
+<source src="https://lb123658.github.io/galaxy/video.mov">
+</video>
+
+<div id="more">
+<br><br><br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">history</span> 
+<h2>Galaxy never shares your search history with anyone else</h2>
+<p>Galaxy stores your search history to make it more convienient for you but it is only stored in your browser so no one else can access it.</p>
+<br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">search</span> 
+<h2>Galaxy never tracks your searches</h2>
+<p>No one else knows what you look up on Galaxy.</p>
+<br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">extension</span> 
+<h2>Add Galaxy to your browser</h2>
+<p>Download the Galaxy extension to make searching even easier. Currently available for Chrome and Brave.</p>
+<a href="https://lb123658.github.io/galaxy/extension/extension.zip">
+<button style="background:#5765f2;"><span class="material-icons" style="float:left;">download</span> Download</button></a>
+<br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">location_on</span> 
+<h2>Galaxy uses personalized results for your location</h2>
+<p>If you search for something "... near you", Galaxy will find your location and search your area on maps. You location is not shared with anyone else.</p>
+<br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">visibility_off</span> 
+<h2>Galaxy never tracks you</h2>
+<p>No one else is watching what you do online with Galaxy.</p>
+<br><br><br><br>
+<span class="material-icons" style="font-size:80px; color:#5765f2;">explore</span> 
+<h2>Try your first search with Galaxy</h2>
+<a href="https://lb123658.github.io/galaxy/?source=new_user">
+<button style="background:#5765f2;" id="search"><span class="material-icons" style="float:left;">search</span> Search</button></a>
+<br><br><br><br>
+<br><br><br><br>
+<a href="#">
+<button style="background:#5765f2;"><span class="material-icons" style="float:left;">expand_less</span> Back to top</button></a>
+<br><br><br><br>
+</div>
+</div>
 </body>
 </head>
