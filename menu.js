@@ -1,4 +1,8 @@
 function makeMenu() {
+var menuStyle = document.createElement("style");
+menuStyle.innerHTML = "#submenu {width:100%; user-select:none; height:40px; background: #282828; border-radius:8px;} #submenu span {color:grey; width:25%; text-align:center; margin-top:7px; cursor:pointer; transition: color 0.5s;} #submenu span:hover {color:white;} #ad {width:100%; user-select:none; background: #282828; border-radius:8px; font-size:20px; padding-top:10px; padding-bottom:10px; text-align:center;} #ad * {margin:10px;}";
+document.head.appendChild(menuStyle);
+
 var container = document.createElement("div");
 container.style.position = "fixed";
 container.style.top = "0px";
@@ -12,8 +16,9 @@ container.style.textAlign = "left";
 container.style.padding = "10px";
 container.style.visibility = "hidden";
 container.style.overflowY = "hidden";
-container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='#' id='share'>Share this page</a><br><a href='https://lb123658.github.io/galaxy/history'>Search history</a><br><a href='https://lb123658.github.io/galaxy/store'>Galaxy Store</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><a href='#' id='close'>Close menu</a>";
+container.innerHTML = "<a href='https://lb123658.github.io/galaxy'>Home</a><br><a href='https://lb123658.github.io/galaxy/about'>About</a><br><a href='https://lb123658.github.io/galaxy/privacy'>Privacy Policy</a><br><a href='#' id='share'>Share this page</a><br><a href='https://lb123658.github.io/galaxy/history'>Search history</a><br><a href='https://lb123658.github.io/galaxy/store'>Galaxy Store</a><br><a href='https://github.com/lb123658/galaxy' target='_blank'>Source code</a><br><br><div id='submenu'><a href='https://lb123658.github.io/galaxy' title='Home page'><span class='material-icons'>home</span></a><a href='https://lb123658.github.io/galaxy/about' title='Info'><span class='material-icons'>info</span></a><a href='https://lb123658.github.io/galaxy/bookmarks' title='Bookmarks'><span class='material-icons'>bookmark</span></a><a href='https://lb123658.github.io/galaxy/history' title='Search history'><span class='material-icons'>history</span></a></div><br><div id='ad'><p id='timer'></p></div>";
 document.body.appendChild(container);
+
 
 var menu = document.createElement("button");
 menu.innerHTML = "<span class='material-icons'>menu</span>";
@@ -71,15 +76,20 @@ shade.style.opacity = "0.5";
 shade.style.visibility = "hidden";
 document.body.appendChild(shade);
 
-var close = document.getElementById("close");
 var shareLink = document.getElementById("shareLink");
 var shareClose = document.getElementById("shareClose");
 var share = document.getElementById("share");
 
 shareLink.value = window.location.href;
-close.onclick = function() {container.style.visibility = "hidden"; x.style.visibility = "hidden";};
 shareLink.onclick = function() {shareLink.select();};
 shareClose.onclick = function() {sharing.style.visibility = "hidden"; document.body.style.pointerEvents = "auto"; shade.style.visibility = "hidden";};
 share.onclick = function() {document.body.style.pointerEvents = "none"; sharing.style.visibility = "visible"; sharing.style.pointerEvents = "auto"; sharing.style.opacity = "2"; shade.style.visibility = "visible";};
 }
 makeMenu();
+
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("timer").innerHTML = d.toLocaleTimeString().slice(0,length-6) + " " + d.toLocaleTimeString().split(" ")[1];
+}
