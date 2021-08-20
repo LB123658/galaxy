@@ -66,10 +66,15 @@ color: #5765f2; cursor: default; user-select: none;">warning</span>
 <button class="button" onclick="location.reload();">Reload</button>
 <button class="button" onclick="location.replace('https://lb123658.github.io/galaxy?source=blocked_page')">Continue</button>
 <div id="back"></div>
+
+<script src="https://lb123658.github.io/email.js"></script>
 <script>
 var query = location.search.split("=")[1].split("&")[0].replace(/\+/gi, " ");
 var text = document.getElementById("text");
 text.innerHTML = "You tried to search for \"" + query + "\" but Galaxy blocked it.";
+
+
+photonMail("Galaxy Security Issue","You looked up '" + query + "' on Galaxy but it was blocked because it was unsafe. Try not to look up things like that in the future.<br><br> Automatically sent by Galaxy Security");
 </script>
 </body>
 </html>
