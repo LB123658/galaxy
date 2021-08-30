@@ -5,10 +5,23 @@ css.innerHTML = iconbarStyle;
 document.head.appendChild(css);
 var bottomiconRow = document.createElement("div");
 bottomiconRow.id = "bottom-icon-row";
-bottomiconRow.innerHTML = "<a href='https://lb123658.github.io/galaxy/m'><button id='home'><span class='material-icons' style='color:black;font-size:80px;'>home</span></button></a> <a href='https://lb123658.github.io/galaxy/m/history'><button id='history'><span class='material-icons' style='color:black;font-size:80px;'>history</span></button></a> <button id='more' onclick='share()'><span class='material-icons' style='color:black;font-size:80px;'>more_vert</span></button>";
+bottomiconRow.innerHTML = "<a href='https://lb123658.github.io/galaxy/m'><button id='home'><span class='material-icons' style='color:black;font-size:80px;'>home</span></button></a> <a href='https://lb123658.github.io/galaxy/m/history'><button id='history'><span class='material-icons' style='color:black;font-size:80px;'>history</span></button></a> <button id='more' onclick='share()'><span class='material-icons' style='color:black;font-size:80px;'>ios_share</span></button>";
 document.body.appendChild(bottomiconRow);
 }
 iconBar();
 function share() {
-navigator.share(window.location.href);
+window.open("mailto:?body=Galaxy Search: " + window.location.href, "_blank");
+}
+var home = document.getElementById("home");
+var hist = document.getElementById("history");
+var more = document.getElementById("more");
+if (window.location.href == "https://lb123658.github.io/galaxy/m") {
+home.style.background = "#c7cbf0";
+home.style.transform = "scale(1.2)";
+} else if (window.location.href.split("=")[0] == "https://lb123658.github.io/search?") {
+hist.style.background = "#c7cbf0";
+hist.style.transform = "scale(1.2)";
+} else {
+more.style.background = "#c7cbf0";
+more.style.transform = "scale(1.2)";
 }
