@@ -15,7 +15,7 @@ window.open("mailto:?body=Galaxy Search: " + window.location.href, "_blank");
 var home = document.getElementById("home");
 var hist = document.getElementById("history");
 var more = document.getElementById("more");
-if (window.location.href == "https://lb123658.github.io/galaxy/m") {
+if (window.location.href == "https://lb123658.github.io/galaxy/m/") {
 home.style.background = "#c7cbf0";
 home.style.transform = "scale(1.2)";
 } else if (window.location.href == "https://lb123658.github.io/galaxy/m/history") {
