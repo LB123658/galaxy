@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galaxy search sharing</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel='icon' href='https://lb123658.github.io/galaxy/m/favicon.png' type='image/png'/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<style>
+* {
+font-family: 'Montserrat', sans-serif;
+color: black;
+-webkit-user-select: none;
+}
+::selection {
+background: #5765f2;
+}
+:focus {
+outline-width: 0px;
+outline: none;
+}
+input {
+-webkit-user-select: auto;
+margin-top: 50px;
+width: 90%;
+text-align: left;
+font-size: 50px;
+border: 3px solid #3b4351;
+border-radius: 8px;
+padding: 20px;
+}
+input::selection {
+background: grey;
+}
+input:focus {
+background: white;
+border: 3px solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+body {
+text-align: center;
+overflow-x: hidden;
+}
+#results {
+width: 100%;
+text-align: left;
+}
+#results button {
+width: 100%;
+color: black;
+font-size: 40px;
+border: none;
+border-radius: 30px;
+text-align: left;
+margin-top: 20px;
+background: white;
+padding: 20px;
+transition: transform 0.5s;
+transform: scale(0.9);
+}
+#results button:hover {
+transform: scale(0.8);
+}
+#results button:focus {
+transform: scale(0.8);
+}
+a {
+color: #5765f2;
+font-size: 40px;
+text-decoration: none;
+}
+h1 {
+font-size: 80px;
+text-align: center;
+}
+#back {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+z-index: -1;
+background-image: linear-gradient(#c7cbf0, white);
+}
+p {
+font-size: 50px;
+text-align: center;
+}
+#img {
+width: 50%;
+border-radius: 30px;
+transition: transform 0.5s;
+}
+#img:hover {
+transform: scale(1.2);
+}
+</style>
+</head>
+<body>
+<div id="back"></div>
+<h1>Sharing options</h1>
+<img src="https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Flb123658.github.io%2Fgalaxy%2Fm&chs=180x180&choe=UTF-8&chld=L|2" id="img">
+<div id="results">
+<p>Share this page</p>
+
+<a id="email" target="_blank">
+  <button>Email</button>
+</a>
+<a id="download" download>
+  <button>Download</button>
+</a>
+<br><br>
+<p>Back to search</p>
+<button>Go Back</button>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</div>
+
+<script>
+var img = document.getElementById("img");
+var email = document.getElementById("email");
+var download = document.getElementById("download");
+
+img.src = "https://chart.googleapis.com/chart?cht=qr&chl=" + encodeURIComponent(localStorage.getItem("share-page")) + "&chs=180x180&choe=UTF-8&chld=L|2";
+email.href = "mailto:?body=Galaxy Search: " + localStorage.getItem("share-page");
+download.href = localStorage.getItem("share-page");
+
+</script>
+<script src="https://lb123658.github.io/galaxy/m/icon-bar.js"></script>
+</body>
+</html>
