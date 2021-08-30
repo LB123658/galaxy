@@ -18,10 +18,8 @@ var more = document.getElementById("more");
 if (window.location.href == "https://lb123658.github.io/galaxy/m") {
 home.style.background = "#c7cbf0";
 home.style.transform = "scale(1.2)";
-} else if (window.location.href.split("=")[0] == "https://lb123658.github.io/search?") {
+} else if (window.location.href == "https://lb123658.github.io/galaxy/m/history") {
 hist.style.background = "#c7cbf0";
 hist.style.transform = "scale(1.2)";
 } else {
-more.style.background = "#c7cbf0";
-more.style.transform = "scale(1.2)";
 }
