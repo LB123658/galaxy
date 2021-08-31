@@ -25,7 +25,7 @@ home.onclick = function() {window.history.back();};
 }
 
 }
-setTimeout(iconBar, 1000);
+iconBar();
 
 function share() {
 localStorage.setItem("share-page",window.location.href);
